@@ -13,7 +13,6 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["idle_inhibitor", "clock"],
   "modules-right": [
-    "tray",
     "memory",
     "cpu",
     "temperature",
@@ -95,10 +94,10 @@
       "deactivated": " ",
     },
   },
-  "tray": {
-    // "icon-size": 21,
-    "spacing": 10,
-  },
+  // "tray": {
+  //   // "icon-size": 21,
+  //   "spacing": 10,
+  // },
   "bluetooth": {
     "format": "<span>   </span>",
     "format-connected": "<span>   </span>",

@@ -1,0 +1,8 @@
+@define-color background rgba(0,0,2, 0.7);
+@define-color foreground #C5C9C5;
+@define-color background2 #181616;
+@define-color color0 #010006;
+@define-color noti-bg-light rgba(53,50,67, 0.6);
+@define-color noti-bg-dark rgba(53,50,67, 0.78);
+@define-color noti-border rgba(115,83,84, 1);
+@define-color noti-bg-alt rgba(71,67,89, 0.8);

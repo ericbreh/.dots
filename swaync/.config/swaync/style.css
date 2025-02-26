@@ -1,0 +1,131 @@
+@import "colors.css";
+
+* {
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 15px;
+  color: @foreground;
+  transition: 200ms;
+}
+
+/********************************
+********* NOTIFICATION **********
+*********************************/
+
+.notification {
+  border: none;
+  border-radius: 10px;
+}
+
+.summary {
+  font-size: 16px;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.notification-background {
+  background: transparent;
+}
+
+.notification-content {
+  background: transparent;
+  border-radius: 0px;
+  padding: 15px;
+}
+.image,
+.body-image {
+  /* .image is the icon */
+  margin: 0px 5px 0px 0px;
+}
+.notification-default-action {
+  background: @background;
+  border: 2px solid @noti-bg-dark;
+  opacity: 1;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.notification-default-action:not(:only-child) {
+  /* if other action options are also present */
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.notification-default-action:hover {
+  border: 2px solid @noti-border;
+}
+
+.notification-action {
+  border: none;
+  border-radius: 5px;
+  background: @noti-bg-light;
+}
+.notification-action:hover {
+  background: @noti-bg-alt;
+  border: 2px solid @noti-border;
+}
+.notification-action:first-child {
+  border-bottom-left-radius: 15px;
+}
+.notification-action:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+.close-button {
+  padding: 0px;
+  margin: 5px;
+}
+.close-button:hover {
+  box-shadow: none;
+  background: rgba(247, 118, 142, 0.5); /* TokyoNight Red color */
+  transition: all 0.2s ease-in-out;
+}
+
+/********************************
+******** CONTROL CENTER *********
+********************************/
+
+.widget-dnd {
+  padding: 10px 10px 0px;
+}
+.widget-title {
+  padding: 10px 10px 0px;
+}
+/*UNCOMMENT TO MAKE SWITCHES DARK*/
+/*.widget-dnd > switch:checked {*/
+/*  background: @background2;*/
+/*}*/
+.control-center {
+  background: @background2;
+  border-radius: 15px;
+  margin-top: 8px;
+}
+
+.notification-row {
+  background: transparent;
+  outline: none;
+}
+
+.time {
+  color: gray;
+  margin: 3px 37px 0px 0px;
+}
+
+.widget-volume {
+  padding: 0px 10px 0px;
+  background: @background2;
+}
+.widget-backlight {
+  padding: 0px 10px 0px;
+  background: @background2;
+}
+
+.widget-mpris {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 12px;
+  background: @background2;
+}
+
+.control-center-list {
+  background: transparent;
+}
