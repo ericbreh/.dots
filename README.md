@@ -1,5 +1,5 @@
 # .dots
 * wallpaper
 * pywal
-* nautilus
-* 
+* nautilus spacing
+* suspend
