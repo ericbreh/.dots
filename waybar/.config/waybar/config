@@ -6,14 +6,16 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "custom/notification",
         "clock"
     ],
     "modules-right": [
-        "group/expand",
+        "cpu",
+        "memory",
+        "temperature",
         "bluetooth",
         "network",
-        "battery"
+        "battery",
+        "custom/notification"
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -59,7 +61,7 @@
         "tooltip-format-disconnected": "Error",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} 🖧 ",
-        "on-click": "kitty nmtui"
+        "on-click": "network_manager"
     },
     "bluetooth": {
         "format-on": "󰂯",
@@ -92,15 +94,6 @@
             "󰂂",
             "󰁹"
         ],
-    },
-    "custom/pacman": {
-        "format": "󰅢 {}",
-        "interval": 30,
-        "exec": "checkupdates | wc -l",
-        "exec-if": "exit 0",
-        "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-        "signal": 8,
-        "tooltip": false,
     },
     "custom/expand": {
         "format": "",
@@ -135,18 +128,17 @@
         "signal": 1
     },
     "cpu": {
-        "format": "󰻠",
-        "tooltip": true
+        "format": " {usage}%",
+        "tooltip": false,
+        "on-click": "kitty btop",
     },
     "memory": {
-        "format": ""
+        "format": "󰘚 {}%",
+        "on-click": "kitty btop",
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "",
-    },
-    "tray": {
-        "icon-size": 14,
-        "spacing": 10
+        "format": " {temperatureC}°C",
+        "on-click": "kitty btop",
     },
 }

@@ -1,1 +1,5 @@
 # .dots
+* wallpaper
+* pywal
+* nautilus
+* 
