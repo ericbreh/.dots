@@ -13,6 +13,7 @@
         "cpu",
         "memory",
         "temperature",
+        "custom/endpoint",
         "bluetooth",
         "network",
         "battery",
@@ -114,6 +115,7 @@
         "modules": [
             "custom/expand",
             "custom/colorpicker",
+            "power-profiles-daemon",
             "custom/endpoint"
         ],
     },
@@ -138,5 +140,16 @@
         "critical-threshold": 80,
         "format": " {temperatureC}°C",
         "on-click": "kitty btop",
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": " ",
+            "performance": " ",
+            "balanced": " ",
+            "power-saver": " ",
+        },
     },
 }

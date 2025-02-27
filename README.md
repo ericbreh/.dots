@@ -3,3 +3,4 @@
 * pywal
 * nautilus spacing
 * suspend
+* google tasks
