@@ -41,4 +41,3 @@ export PATH=$PATH:~/Utils/verible-v0.0-3831-g32b2456e/bin
 export PATH=$PATH:~/Utils/Xilinx/Vivado/2024.2/bin
 
 (cat ~/.cache/wal/sequences &)
-# source ~/.cache/wal/colors-tty.sh
