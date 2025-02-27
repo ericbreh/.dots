@@ -1,30 +1,21 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
-    "text" : "Lock",
+    "action" : "hyprlock",
     "keybind" : "l"
 }
 {
-    "label" : "shutdown",
-    "action" : "systemctl poweroff",
-    "text" : "Shutdown",
-    "keybind" : "s"
-}
-{
     "label" : "reboot",
-    "action" : "systemctl reboot",
-    "text" : "Reboot",
+    "action" : "systemctl reboot || loginctl reboot",
     "keybind" : "r"
 }
-{
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
-}
+
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit",
-    "text" : "Exit",
+    "action" : "pkill Hyprland || pkill sway || pkill niri || loginctl terminate-user $USER",
     "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff || loginctl poweroff",
+    "keybind" : "s"
 }
