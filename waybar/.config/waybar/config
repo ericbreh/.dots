@@ -9,6 +9,7 @@
         "clock"
     ],
     "modules-right": [
+        "group/expand",
         "cpu",
         "memory",
         "temperature",
@@ -113,9 +114,6 @@
         "modules": [
             "custom/expand",
             "custom/colorpicker",
-            "cpu",
-            "memory",
-            "temperature",
             "custom/endpoint"
         ],
     },
