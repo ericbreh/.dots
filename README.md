@@ -1,4 +1,1 @@
-# .dots
-* suspend
-* google tasks
-* screenshots
+# dots
