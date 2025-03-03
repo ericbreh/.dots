@@ -43,18 +43,15 @@
         "escape": true
     },
     "clock": {
-        "format": "{:%I:%M:%S %p} ",
+        "format": "{:%I:%M %p | %a %d}",
         "interval": 1,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "format": {
-                "today": "<span color='#fAfBfC'><b>{}</b></span>"
+                "today": "<span color='#AE4045'><b>{}</b></span>"
             }
         },
-        "actions": {
-            "on-click-right": "shift_down",
-            "on-click": "shift_up"
-        }
+        "on-click": "gnome-calendar"
     },
     "network": {
         "format-wifi": "",
@@ -75,14 +72,14 @@
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-        "on-click-right": "blueman-manager",
+        "on-click": "blueman-manager",
     },
     "battery": {
         "interval": 30,
         "states": {
             "good": 95,
-            "warning": 30,
-            "critical": 20
+            "warning": 20,
+            "critical": 10
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
