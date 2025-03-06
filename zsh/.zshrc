@@ -1,4 +1,6 @@
-(cat ~/.cache/wal/sequences &)
+if [[ -z "$VSCODE_INJECTION" ]]; then
+    (cat ~/.cache/wal/sequences &)
+fi
 # clear && fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -21,10 +23,16 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-# export GPG_TTY=$(tty)
+export PATH="/home/ericbreh/.local/bin:$PATH"
 
 # cse 293
 export PATH=$PATH:~/Utils/oss-cad-suite/bin
 export PATH=$PATH:~/Utils/zachjs-sv2v
 export PATH=$PATH:~/Utils/verible-v0.0-3831-g32b2456e/bin
 export PATH=$PATH:~/Utils/Xilinx/Vivado/2024.2/bin
+export PATH=$PATH:~/Utils/xschem/bin
+export PATH=$PATH:~/Utils/netgen/bin
+
+export PDK_ROOT=~/.volare
+
+export PATH=$PATH:~/Utils/flutter/bin
