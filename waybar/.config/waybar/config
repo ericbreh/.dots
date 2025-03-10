@@ -113,6 +113,7 @@
             "custom/expand",
             "custom/colorpicker",
             "power-profiles-daemon",
+            "idle_inhibitor",
             "custom/endpoint"
         ],
     },
@@ -147,6 +148,13 @@
             "performance": " ",
             "balanced": " ",
             "power-saver": " ",
+        },
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " ",
         },
     },
 }

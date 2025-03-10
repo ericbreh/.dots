@@ -141,11 +141,12 @@ tooltip {
     color: #26A65B;
 }
 
-#battery.warning:not(.charging) {
+#battery.warning {
+    background-color: unset;
     color: #ffbe61;
 }
 
-#battery.critical:not(.charging) {
+#battery.critical {
     color: #f53c3c;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -186,4 +187,19 @@ tooltip {
     color: transparent;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
 
+}
+
+#idle_inhibitor {
+    border-radius: 10px;
+    padding-top: 0;
+    padding-right: 15px;
+    padding-bottom: 0;
+    padding-left: 15px;
+    margin-right: 5px;
+    background-color: rgba(24, 22, 22, 1);
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
 }
