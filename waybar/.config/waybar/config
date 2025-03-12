@@ -13,7 +13,6 @@
         "cpu",
         "memory",
         "temperature",
-        "custom/endpoint",
         "battery"
     ],
     "group/expand": {
