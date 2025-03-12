@@ -14,11 +14,35 @@
         "memory",
         "temperature",
         "custom/endpoint",
-        "bluetooth",
-        "network",
-        "battery",
-        "custom/notification"
+        "battery"
     ],
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/expand",
+            "power-profiles-daemon",
+            "idle_inhibitor",
+            "custom/endpoint",
+            "custom/colorpicker",
+            "bluetooth",
+            "network",
+            "custom/notification",
+            "custom/endpoint"
+        ],
+    },
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/endpoint": {
+        "format": "|",
+        "tooltip": false
+    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -94,29 +118,6 @@
             "󰁹"
         ],
     },
-    "custom/expand": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/endpoint": {
-        "format": "|",
-        "tooltip": false
-    },
-    "group/expand": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 600,
-            "transition-to-left": true,
-            "click-to-reveal": true
-        },
-        "modules": [
-            "custom/expand",
-            "custom/colorpicker",
-            "power-profiles-daemon",
-            "idle_inhibitor",
-            "custom/endpoint"
-        ],
-    },
     "custom/colorpicker": {
         "format": "",
         "return-type": "json",
@@ -132,11 +133,13 @@
     },
     "memory": {
         "format": "󰘚 {}%",
+        "tooltip": false,
         "on-click": "kitty btop",
     },
     "temperature": {
         "critical-threshold": 80,
         "format": " {temperatureC}°C",
+        "tooltip": false,
         "on-click": "kitty btop",
     },
     "power-profiles-daemon": {

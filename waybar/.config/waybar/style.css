@@ -79,7 +79,7 @@ tooltip {
 #workspaces button {
     all: unset;
     padding: 0px 5px;
-    color: alpha(@color9, .4);
+    color: alpha(@color2, .4);
     transition: all .2s ease;
 }
 
@@ -91,7 +91,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: @color9;
+    color: @color2;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -110,7 +110,7 @@ tooltip {
 }
 
 #workspaces button.empty.active {
-    color: @color9;
+    color: @color2;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
@@ -162,7 +162,7 @@ tooltip {
 
 #custom-expand {
     padding: 0px 5px;
-    color: alpha(@foreground, .2);
+    color: @color2;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
     transition: all .3s ease;
 }
@@ -170,6 +170,12 @@ tooltip {
 #custom-expand:hover {
     color: rgba(255, 255, 255, .2);
     text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
+
+#custom-endpoint {
+    color: @color2;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+
 }
 
 #cpu,
@@ -183,23 +189,17 @@ tooltip {
 
 }
 
-#custom-endpoint {
-    color: transparent;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+#temperature.critical {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color: #f53c3c;
 
 }
 
 #idle_inhibitor {
-    border-radius: 10px;
-    padding-top: 0;
-    padding-right: 15px;
-    padding-bottom: 0;
-    padding-left: 15px;
-    margin-right: 5px;
-    background-color: rgba(24, 22, 22, 1);
+    color: @color7;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    color: @color5;
 }
