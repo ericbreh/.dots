@@ -82,7 +82,7 @@
         "tooltip-format-disconnected": "Error",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format-ethernet": "{ifname} 🖧 ",
-        "on-click": "network_manager"
+        "on-click": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
     },
     "bluetooth": {
         "format-on": "󰂯",
