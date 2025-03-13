@@ -3,17 +3,17 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
-        "hyprland/workspaces"
+        "cpu",
+        "memory",
+        "temperature"
     ],
     "modules-center": [
-        "clock"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "group/expand",
-        "cpu",
-        "memory",
-        "temperature",
-        "battery"
+        "battery",
+        "clock"
     ],
     "group/expand": {
         "orientation": "horizontal",
@@ -26,7 +26,6 @@
             "custom/expand",
             "power-profiles-daemon",
             "idle_inhibitor",
-            "custom/endpoint",
             "custom/colorpicker",
             "bluetooth",
             "network",
@@ -66,7 +65,7 @@
         "escape": true
     },
     "clock": {
-        "format": "{:%I:%M %p | %a %d}",
+        "format": "{:%a %b %d %I:%M %p}",
         "interval": 1,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
