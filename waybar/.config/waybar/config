@@ -31,7 +31,7 @@
             "network",
             "custom/notification",
             "custom/endpoint"
-        ],
+        ]
     },
     "custom/expand": {
         "format": "",
@@ -94,7 +94,7 @@
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-        "on-click": "blueman-manager",
+        "on-click": "blueman-manager"
     },
     "battery": {
         "interval": 30,
@@ -114,7 +114,7 @@
             "󰂀",
             "󰂂",
             "󰁹"
-        ],
+        ]
     },
     "custom/colorpicker": {
         "format": "",
@@ -127,18 +127,18 @@
     "cpu": {
         "format": " {usage}%",
         "tooltip": false,
-        "on-click": "kitty btop",
+        "on-click": "kitty btop"
     },
     "memory": {
         "format": "󰘚 {}%",
         "tooltip": false,
-        "on-click": "kitty btop",
+        "on-click": "kitty btop"
     },
     "temperature": {
         "critical-threshold": 80,
         "format": " {temperatureC}°C",
         "tooltip": false,
-        "on-click": "kitty btop",
+        "on-click": "kitty btop"
     },
     "power-profiles-daemon": {
         "format": "{icon}",
@@ -148,14 +148,14 @@
             "default": " ",
             "performance": " ",
             "balanced": " ",
-            "power-saver": " ",
-        },
+            "power-saver": " "
+        }
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": " ",
-            "deactivated": " ",
-        },
-    },
+            "deactivated": " "
+        }
+    }
 }
