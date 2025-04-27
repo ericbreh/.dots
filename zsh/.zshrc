@@ -1,7 +1,7 @@
 if [[ -z "$VSCODE_INJECTION" ]]; then
     (cat ~/.cache/wal/sequences &)
 fi
-# clear && fastfetch
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -35,3 +35,5 @@ export PATH=$PATH:~/Utils/netgen/bin
 export PDK_ROOT=~/.volare
 
 export PATH=$PATH:~/Utils/flutter/bin
+
+alias la='ls -A'
