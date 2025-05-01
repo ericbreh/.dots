@@ -9,15 +9,27 @@ if true then return {} end
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
-
-  -- Configure LazyVim to load gruvbox
+  -- -- add gruvbox
+  -- { "ellisonleao/gruvbox.nvim" },
+  --
+  -- -- Configure LazyVim to load gruvbox
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "gruvbox",
+  --   },
+  -- },
   {
-    "LazyVim/LazyVim",
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
-      colorscheme = "gruvbox",
+      style = "night",
     },
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
 
   -- change trouble config
