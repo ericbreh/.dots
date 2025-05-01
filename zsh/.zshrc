@@ -1,6 +1,4 @@
-if [[ -z "$VSCODE_INJECTION" ]]; then
-    (cat ~/.cache/wal/sequences &)
-fi
+if [[ -z "$VSCODE_INJECTION" ]]; then (cat ~/.cache/wal/sequences &) fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -34,6 +32,7 @@ export PATH=$PATH:~/Utils/netgen/bin
 
 export PDK_ROOT=~/.volare
 
+export CHROME_EXECUTABLE=$(which brave-browser)
 export PATH=$PATH:~/Utils/flutter/bin
 
 alias la='ls -A'
