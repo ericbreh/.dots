@@ -1,105 +1,103 @@
-@import url('/home/ericbreh/.cache/wal/colors-waybar.css');
+@define-color bg rgba(20, 20, 20, 0.6);
+@define-color bg-hover rgba(20, 20, 20, 0.8);
+@define-color text rgba(198, 194, 194, 1.0);
+@define-color accent-mauve #88c0d0;
+@define-color accent-red #d96c6c;
+@define-color accent-lavender #e6a96b;
 
-@define-color mauve  @color5;
-@define-color red  @color9;
-@define-color lavender  @color7;
-@define-color text  @color7;
 @keyframes fadeIn {
-    0% {
-    }
-    100% {
-    }
+    0% {}
+
+    100% {}
 }
 
 * {
-    all:unset;
-    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
+    all: unset;
+    font-family: "CodeNewRoman Nerd Font Propo";
     font-size: 18px;
     outline: none;
     border: none;
-    text-shadow:none;
-    background-color:transparent;
+    text-shadow: none;
+    background-color: transparent;
 }
 
 window {
-    all:unset;
+    all: unset;
     padding: 20px;
     border-radius: 0px;
-    background-color: alpha(@background,.5);
+    background-color: @bg;
 }
+
 #inner-box {
     margin: 2px;
-    padding: 5px
+    padding: 5px;
     border: none;
 }
-#outer-box {    
+
+#outer-box {
     border: none;
 }
+
 #scroll {
     margin: 0px;
     padding: 30px;
     border: none;
 }
+
 #input {
-    all:unset;
-    margin-left:20px;
-    margin-right:20px;
-    margin-top:20px;
+    all: unset;
+    margin: 20px;
     padding: 20px;
-    border: none;
-    outline: none;
     color: @text;
-    box-shadow: 1px 1px 5px rgba(0,0,0, .5);
-    border-radius:10;
-    background-color: alpha(@background,.2);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: alpha(@bg, 0.2);
 }
+
 #input image {
     border: none;
-    color: @red;
-    padding-right:10px;
+    color: @accent-red;
+    padding-right: 10px;
 }
+
 #input * {
     border: none;
     outline: none;
 }
 
 #input:focus {
-    outline: none;
-    border: none;
+    border-radius: 10px;
+}
 
-    border-radius:10;
-}
 #text {
     margin: 5px;
     border: none;
     color: @text;
     outline: none;
 }
-#text {
-    margin: 5px;
-    border: none;
-    color: @text;
-    outline: none;
-}
+
 #entry {
     border: none;
     margin: 5px;
     padding: 10px;
 }
+
 #entry arrow {
     border: none;
-    color: @lavender;
-
+    color: @accent-lavender;
 }
+
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(255,255,255, .03);
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.03);
     border: none;
     border-radius: 20px;
-    background-color:transparent;
+    background-color: transparent;
 }
+
 #entry:selected #text {
-    color: @mauve;
+    color: @accent-mauve;
 }
+
 #entry:drop(active) {
-    background-color: @lavender !important;
+    background-color: @accent-lavender !important;
 }

@@ -1,5 +1,3 @@
-@import url('../../.cache/wal/colors-waybar.css');
-
 * {
     font-size: 15px;
     font-family: "CodeNewRoman Nerd Font Propo";
@@ -9,35 +7,89 @@ window#waybar {
     all: unset;
 }
 
-.modules-left {
+/* Module containers */
+.modules-left,
+.modules-center,
+.modules-right {
     padding: 5px;
-    margin: 4 0 0 10;
     border-radius: 10px;
-    background: alpha(@background, .6);
+    background: rgba(15, 15, 15, 0.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+
+.modules-left {
+    margin: 4 0 0 10;
 }
 
 .modules-center {
-    padding: 5px;
     margin: 4 0 0 0;
-    border-radius: 10px;
-    background: alpha(@background, .6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 
 .modules-right {
-    padding: 5px;
     margin: 4 10 0 0;
-    border-radius: 10px;
-    background: alpha(@background, .6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
 }
 
 tooltip {
-    background: @background;
-    color: @color7;
+    background: rgba(15, 15, 15, 1);
 }
 
+/* Workspaces */
+#workspaces {
+    padding: 0px 5px;
+}
+
+#workspaces button,
+#workspaces button.empty,
+#workspaces button.active,
+#workspaces button.empty.active {
+    all: unset;
+    padding: 0px 5px;
+    border: none;
+    transition: all .2s ease;
+}
+
+#workspaces button {
+    color: rgba(80, 80, 80, 1.0);
+}
+
+#workspaces button.active,
+#workspaces button.empty.active {
+    color: rgba(120, 120, 120, 1.0);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+#workspaces button:hover,
+#workspaces button.empty:hover {
+    color: rgba(60, 60, 60, 1);
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 0.3s ease;
+}
+
+#workspaces button.empty {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+
+/* Main module style group */
+#clock,
+#custom-pacman,
+#custom-notification,
+#bluetooth,
+#network,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#power-profiles-daemon,
+#custom-colorpicker,
+#idle_inhibitor,
+#idle_inhibitor.activated {
+    padding: 0px 5px;
+    color: rgba(198, 194, 194, 1.0);
+    transition: all .3s ease;
+}
+
+/* Hover group */
 #clock:hover,
 #custom-pacman:hover,
 #custom-notification:hover,
@@ -48,106 +100,28 @@ tooltip {
 #memory:hover,
 #temperature:hover,
 #power-profiles-daemon:hover,
-#custom-colorpicker:hover {
+#custom-colorpicker:hover,
+#idle_inhibitor:hover,
+#idle_inhibitor.activated:hover,
+#custom-expand:hover,
+#custom-endpoint:hover {
     transition: all .3s ease;
-    color: @color9;
+    color: rgba(100, 100, 100, 1);
 }
 
-#custom-notification {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-}
-
-#clock {
-    padding: 0px 5px;
-    color: @color7;
-    transition: all .3s ease;
-}
-
-#custom-pacman {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-
-}
-
-#workspaces {
-    padding: 0px 5px;
-}
-
-#workspaces button {
-    all: unset;
-    padding: 0px 5px;
-    color: alpha(@color2, .4);
-    transition: all .2s ease;
-}
-
-#workspaces button:hover {
-    color: rgba(0, 0, 0, 0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
-}
-
-#workspaces button.active {
-    color: @color2;
-    border: none;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
-}
-
-#workspaces button.empty {
-    color: rgba(0, 0, 0, 0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
-}
-
-#workspaces button.empty:hover {
-    color: rgba(0, 0, 0, 0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
-}
-
-#workspaces button.empty.active {
-    color: @color2;
-    border: none;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
-}
-
-#bluetooth {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-
-}
-
-#network {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-
-}
-
-#battery {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-
-
-}
-
+/* Battery states */
 #battery.charging {
-    color: #26A65B;
+    color: #4fa87a;
 }
 
 #battery.warning {
     background-color: unset;
-    color: #ffbe61;
+    color: #e6a96b;
 }
 
-#battery.critical {
-    color: #f53c3c;
+#battery.critical,
+#temperature.critical {
+    color: #d96c6c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -155,6 +129,7 @@ tooltip {
     animation-direction: alternate;
 }
 
+/* Expand panel*/
 #group-expand {
     padding: 0px 5px;
     transition: all .3s ease;
@@ -162,44 +137,13 @@ tooltip {
 
 #custom-expand {
     padding: 0px 5px;
-    color: @color2;
+    color: rgba(80, 80, 80, 1.0);
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
     transition: all .3s ease;
 }
 
-#custom-expand:hover {
-    color: rgba(255, 255, 255, .2);
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
-}
-
 #custom-endpoint {
-    color: @color2;
+    color: rgba(80, 80, 80, 1.0);
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
 
-}
-
-#cpu,
-#memory,
-#temperature,
-#custom-colorpicker,
-#power-profiles-daemon {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-
-}
-
-#temperature.critical {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color: #f53c3c;
-
-}
-
-#idle_inhibitor {
-    color: @color7;
-}
-
-#idle_inhibitor.activated {
-    color: @color5;
 }
