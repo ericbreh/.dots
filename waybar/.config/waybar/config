@@ -11,35 +11,17 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "group/expand",
+        "power-profiles-daemon",
+        "idle_inhibitor",
+        "custom/endpoint",
+        "bluetooth",
+        "network",
+        "custom/endpoint",
         "battery",
-        "clock"
+        "clock",
+        "custom/endpoint",
+        "custom/notification"
     ],
-    "group/expand": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-duration": 600,
-            "transition-to-left": true,
-            "click-to-reveal": true
-        },
-        "modules": [
-            "custom/expand",
-            "power-profiles-daemon",
-            "idle_inhibitor",
-            "bluetooth",
-            "network",
-            "custom/notification",
-            "custom/endpoint"
-        ]
-    },
-    "custom/expand": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/endpoint": {
-        "format": "|",
-        "tooltip": false
-    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -56,6 +38,10 @@
                 5
             ]
         }
+    },
+    "custom/endpoint": {
+        "format": "|",
+        "tooltip": false
     },
     "custom/notification": {
         "tooltip": false,
@@ -136,17 +122,17 @@
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
-            "default": " ",
-            "performance": " ",
-            "balanced": " ",
-            "power-saver": " "
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
         }
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": " ",
-            "deactivated": " "
+            "activated": "",
+            "deactivated": ""
         }
     }
 }
