@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MOUNT_POINT="/run/media/ericbreh/Backup"
+MOUNT_POINT="/run/media/ericbreh/MEMOREX"
 BACKUP_DIR="$MOUNT_POINT/computer"
 
 backup() {
