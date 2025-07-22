@@ -7,10 +7,10 @@ backup() {
 	mkdir -p "$BACKUP_DIR/$2"
 	if [ -n "$3" ]; then
 		echo "Backing up $1 to $BACKUP_DIR/$2 excluding $3"
-		rsync -a --delete --exclude="$3" "$1" "$BACKUP_DIR/$2"
+		rsync -a --delete --info=stats2 --exclude="$3" "$1" "$BACKUP_DIR/$2"
 	else
 		echo "Backing up $1 to $BACKUP_DIR/$2"
-		rsync -a --delete "$1" "$BACKUP_DIR/$2"
+		rsync -a --delete --info=stats2 "$1" "$BACKUP_DIR/$2"
 	fi
 
 }
