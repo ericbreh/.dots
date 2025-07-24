@@ -24,3 +24,4 @@ backup "$HOME/Github/secrets/" Github/secrets
 backup "$HOME/Pictures/" Pictures "Screenshots"
 backup "$HOME/.ssh/" .ssh
 backup "$HOME/.gnupg/" .gnupg
+backup "$HOME/.dots/" .dots
