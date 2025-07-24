@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BACKUP_DIR="/run/media/ericbreh/Backup/computer"
+BACKUP_DIR="/run/media/ericbreh/MEMOREX/computer"
 BACKUP_LIST="backup-list.txt"
 DRY_RUN=false
 
