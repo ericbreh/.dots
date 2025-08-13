@@ -52,6 +52,8 @@ smart_audio_switch() {
             pactl move-source-output "$streamId" "$target_source" 2>/dev/null
         done
     fi
+
+    notify-send "Audio Switch" "Switched audio input/output" -i audio-input-microphone
 }
 
 # If script is called with "monitor" argument, run in monitoring mode
