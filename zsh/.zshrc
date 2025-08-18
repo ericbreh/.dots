@@ -39,9 +39,11 @@ export PATH=$PATH:~/Utils/netgen/bin
 
 export PDK_ROOT=~/.volare
 
+# flutter
 export CHROME_EXECUTABLE=$(which brave-browser)
 export PATH=$PATH:~/Utils/flutter/bin
 
+# alias
 alias la='ls -A'
 alias rcat="command cat"
 alias cat="bat"
