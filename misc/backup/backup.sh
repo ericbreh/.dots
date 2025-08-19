@@ -25,3 +25,4 @@ backup "$HOME/Pictures/" Pictures "Screenshots"
 backup "$HOME/.ssh/" .ssh
 backup "$HOME/.gnupg/" .gnupg
 backup "$HOME/.dots/" .dots
+backup "$HOME/Documents/" Documents

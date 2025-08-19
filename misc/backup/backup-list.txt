@@ -3,3 +3,4 @@ $HOME/Pictures => Pictures
 $HOME/.ssh => .ssh
 $HOME/.gnupg => .gnupg
 $HOME/.dots => .dots
+$HOME/Documents => Documents
