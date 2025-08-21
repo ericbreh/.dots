@@ -4,7 +4,19 @@
 LAPTOP_SPEAKER="alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Speaker__sink"
 LAPTOP_MIC="alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Mic1__source"
 WIRELESS_HEADPHONES="bluez_output.90_5F_7A_BB_87_46.1"
+# The card name is the bluez device without the .1 or other suffixes
+WIRELESS_HEADPHONES_CARD="bluez_card.90_5F_7A_BB_87_46" 
 WIRELESS_MIC="bluez_input.90:5F:7A:BB:87:46"
+
+# Function to set the audio profile for the headphones
+set_headphone_profile() {
+    local card_name="$1"
+    local profile_name="$2"
+    if pactl list cards short | grep -q "$card_name"; then
+        pactl set-card-profile "$card_name" "$profile_name"
+        echo "Set profile for $card_name to $profile_name"
+    fi
+}
 
 get_best_audio_output() {
     # Check if wireless headphones are available
@@ -30,6 +42,16 @@ smart_audio_switch() {
     local current_sink=$(pactl get-default-sink)
     local current_source=$(pactl get-default-source)
     
+    # Check if we should switch to the wireless headphones
+    if [[ "$target_sink" == "$WIRELESS_HEADPHONES" ]]; then
+        # Set the profile to A2DP for output and HSP/HFP for input
+        set_headphone_profile "$WIRELESS_HEADPHONES_CARD" "headset-head-unit"
+    else
+        # When disconnecting, ensure the profile is not stuck.
+        # This is a good practice but might not be strictly necessary
+        set_headphone_profile "$WIRELESS_HEADPHONES_CARD" "off" 
+    fi
+
     # Only switch if needed
     if [[ "$current_sink" != "$target_sink" ]]; then
         pactl set-default-sink "$target_sink"
