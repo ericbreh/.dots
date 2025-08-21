@@ -1,9 +1,9 @@
-@define-color bg rgba(20, 20, 20, 0.6);
-@define-color bg-hover rgba(20, 20, 20, 0.8);
-@define-color text rgba(198, 194, 194, 1.0);
-@define-color accent-mauve #88c0d0;
-@define-color accent-red #d96c6c;
-@define-color accent-lavender #e6a96b;
+@define-color bg rgba(30, 30, 30, 0.95);
+@define-color bg-hover rgba(45, 45, 45, 0.98);
+@define-color text rgba(230, 230, 230, 1.0);
+@define-color accent-primary rgba(160, 160, 160, 1.0);
+@define-color accent-secondary rgba(120, 120, 120, 1.0);
+@define-color accent-highlight rgba(200, 200, 200, 1.0);
 
 @keyframes fadeIn {
     0% {}
@@ -24,8 +24,9 @@
 window {
     all: unset;
     padding: 20px;
-    border-radius: 0px;
+    border-radius: 12px;
     background-color: @bg;
+    border: 1px solid rgba(60, 60, 60, 0.8);
 }
 
 #inner-box {
@@ -49,14 +50,14 @@ window {
     margin: 20px;
     padding: 20px;
     color: @text;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    background-color: alpha(@bg, 0.2);
+    background-color: rgba(50, 50, 50, 0.6);
 }
 
 #input image {
     border: none;
-    color: @accent-red;
+    color: @accent-secondary;
     padding-right: 10px;
 }
 
@@ -84,20 +85,20 @@ window {
 
 #entry arrow {
     border: none;
-    color: @accent-lavender;
+    color: @accent-secondary;
 }
 
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.03);
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.05);
     border: none;
-    border-radius: 20px;
-    background-color: transparent;
+    border-radius: 8px;
+    background-color: @bg-hover;
 }
 
 #entry:selected #text {
-    color: @accent-mauve;
+    color: @accent-highlight;
 }
 
 #entry:drop(active) {
-    background-color: @accent-lavender !important;
+    background-color: @accent-primary !important;
 }

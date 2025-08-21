@@ -8,7 +8,7 @@ SEARCH_DIR="$HOME"
 selected_display=$(fd --type f --type d . "$SEARCH_DIR" \
             --exclude .git --exclude node_modules --exclude .cache --exclude Utils | \
             awk -F'/' '{if (NF>1) print $(NF-1)"/"$NF" ("$0")"; else print $0" ("$0")"}' | \
-            wofi --dmenu --prompt "Search Files:")
+            wofi --dmenu --prompt "Search Files")
 
 # Extract the full path from the selected item (which is in parentheses)
 if [ -n "$selected_display" ]; then
