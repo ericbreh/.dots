@@ -51,22 +51,25 @@
     },
     "clock": {
         "format": "{:%a %b %d %I:%M %p}",
-        "interval": 1,
-        "tooltip-format": "<tt>{calendar}</tt>",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
             "format": {
-                "today": "<span color='#AE4045'><b>{}</b></span>"
+                "months": "<span color='#c6c2c2'><b>{}</b></span>",
+                "days": "<span color='#a0a0a0'><b>{}</b></span>",
+                "weeks": "<span color='#787878'><b>W{}</b></span>",
+                "weekdays": "<span color='#909090'><b>{}</b></span>",
+                "today": "<span color='#4fa87a'><b>{}</b></span>"
             }
         },
         "on-click": "gnome-calendar"
     },
     "network": {
         "format-wifi": "",
-        "format-ethernet": "",
         "format-disconnected": "",
         "tooltip-format-disconnected": "Error",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} 🖧 ",
+        "tooltip-format-wifi": "{essid} - {signalStrength}%",
         "on-click": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
     },
     "bluetooth": {
@@ -75,7 +78,7 @@
         "on-click": "blueberry",
         "tooltip": true,
         "tooltip-format-connected": "{device_alias}",
-        "tooltip-format-connected-battery": "{device_alias} ({device_battery_percentage}%)",
+        "tooltip-format-connected-battery": "{device_alias} - {device_battery_percentage}%",
         "tooltip-format": "{status}"
     },
     "battery": {
@@ -87,7 +90,6 @@
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% 󰂄 ",
         "format-alt": "{time} {icon}",
         "format-icons": [
             "󰁻",
@@ -116,8 +118,7 @@
     },
     "power-profiles-daemon": {
         "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
+        "tooltip": false,
         "format-icons": {
             "default": "",
             "performance": "",
@@ -130,6 +131,7 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "tooltip": false,
     }
 }
