@@ -16,7 +16,6 @@
         "custom/endpoint",
         "bluetooth",
         "network",
-        "custom/endpoint",
         "battery",
         "clock",
         "custom/endpoint",
@@ -68,7 +67,6 @@
     "network": {
         "format-wifi": "",
         "format-disconnected": "",
-        "tooltip-format-disconnected": "Error",
         "tooltip-format-wifi": "{essid} - {signalStrength}%",
         "on-click": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
     },
