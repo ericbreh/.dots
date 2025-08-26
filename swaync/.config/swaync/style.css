@@ -1,10 +1,10 @@
-@define-color text rgba(198, 194, 194, 1.0);
-@define-color bg rgba(20, 20, 20, 0.6);
-@define-color bg-hover rgba(20, 20, 20, 0.8);
-@define-color mycolor rgba(80, 80, 80, 1.0);
-@define-color border-color rgba(80, 80, 80, 0.15);
-@define-color mpris-album-art-overlay rgba(20, 20, 20, 0.6);
-@define-color mpris-button-hover rgba(20, 20, 20, 0.5);
+@define-color text rgba(230, 230, 230, 1.0);
+@define-color bg rgba(30, 30, 30, 0.95);
+@define-color bg-hover rgba(45, 45, 45, 0.98);
+@define-color mycolor rgba(160, 160, 160, 1.0);
+@define-color border-color rgba(60, 60, 60, 0.8);
+@define-color mpris-album-art-overlay rgba(30, 30, 30, 0.95);
+@define-color mpris-button-hover rgba(45, 45, 45, 0.8);
 
 @define-color accent-good #4fa87a;
 @define-color accent-warn #e6a96b;
@@ -32,13 +32,15 @@
 }
 
 .notification {
-    background: alpha(@mycolor, .5);
+    background: rgba(50, 50, 50, 0.8);
 }
 
 .control-center .notification-row .notification-background .notification {
     margin-top: 0.150rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
-    background: alpha(@mycolor, .3);
+    background: rgba(50, 50, 50, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(60, 60, 60, 0.8);
 }
 
 .floating-notifications .notification {
@@ -55,7 +57,7 @@
 }
 
 .notification widget:hover {
-    background: alpha(@mycolor, .2);
+    background: rgba(60, 60, 60, 0.5);
 }
 
 .floating-notifications.background .notification-background .notification .notification-content,
@@ -79,7 +81,7 @@
 
 .control-center .notification-row .notification-background .notification.critical .notification-content,
 .floating-notifications.background .notification-background .notification.critical .notification-content {
-    background-color: alpha(@accent-crit, 0.3);
+    background-color: rgba(217, 108, 108, 0.3);
 }
 
 .control-center .notification-row .notification-background .notification.critical .notification-content label,
@@ -132,8 +134,9 @@
 .control-center {
     background: @bg;
     color: @text;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .65);
+    border-radius: 12px;
+    border: 1px solid rgba(60, 60, 60, 0.8);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
 }
 
 .widget-title {
@@ -145,7 +148,7 @@
 .widget-title>button {
     font-size: initial;
     color: @text;
-    background: alpha(@accent-crit, 0.3);
+    background: rgba(217, 108, 108, 0.3);
     border-radius: 12px;
     padding: 0px 10px;
     margin-right: 20px;
