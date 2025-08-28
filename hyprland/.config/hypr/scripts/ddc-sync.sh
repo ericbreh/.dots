@@ -2,19 +2,19 @@
 # Sync laptop (intel_backlight) brightness to external monitor (DDC/CI)
 
 BUS=5                 # from `ddcutil detect`
-MAX_MONITOR=75        # max brightness we want on external monitor
+MAX_MONITOR=100
+MIN_MONITOR=0
 BACKLIGHT="/sys/class/backlight/intel_backlight"
 
 # Read laptop brightness values
 current=$(cat "$BACKLIGHT/brightness")
 max=$(cat "$BACKLIGHT/max_brightness")
 
-# Scale: laptop 0..max → monitor 0..MAX_MONITOR
-percent=$(( current * MAX_MONITOR / max ))
+percent=$(( current * (MAX_MONITOR - MIN_MONITOR) / max + MIN_MONITOR ))
 
-# Clamp (safety)
-if [[ $percent -lt 0 ]]; then
-    percent=0
+# Clamp
+if [[ $percent -lt $MIN_MONITOR ]]; then
+    percent=$MIN_MONITOR
 elif [[ $percent -gt $MAX_MONITOR ]]; then
     percent=$MAX_MONITOR
 fi
