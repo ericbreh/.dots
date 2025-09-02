@@ -152,9 +152,9 @@
             "l10nId": null,
             "modifiers": {
                 "control": false,
-                "alt": false,
+                "alt": true,
                 "shift": false,
-                "meta": true,
+                "meta": false,
                 "accel": false
             },
             "action": null,
@@ -170,9 +170,9 @@
             "l10nId": null,
             "modifiers": {
                 "control": false,
-                "alt": false,
+                "alt": true,
                 "shift": false,
-                "meta": true,
+                "meta": false,
                 "accel": false
             },
             "action": null,
@@ -188,9 +188,9 @@
             "l10nId": null,
             "modifiers": {
                 "control": false,
-                "alt": false,
+                "alt": true,
                 "shift": false,
-                "meta": true,
+                "meta": false,
                 "accel": false
             },
             "action": null,
@@ -1696,7 +1696,7 @@
         },
         {
             "id": "zen-workspace-forward",
-            "key": "E",
+            "key": "e",
             "keycode": "",
             "group": "zen-workspace",
             "l10nId": "zen-workspace-shortcut-forward",
@@ -2093,7 +2093,7 @@
         {
             "id": "key_toggleToolbox",
             "key": "i",
-            "keycode": null,
+            "keycode": "",
             "group": "devTools",
             "l10nId": null,
             "modifiers": {
