@@ -1,4 +1,3 @@
-brave-bin
 fnm-bin
 localsend-bin
 mediawriter
@@ -6,6 +5,8 @@ paru
 paru-debug
 phinger-cursors
 slack-desktop-wayland
+tzupdate
 visual-studio-code-bin
 wlogout
 zen-browser-bin
+zoom
