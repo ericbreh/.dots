@@ -1,7 +1,10 @@
 #!/bin/bash
 # Sync laptop (intel_backlight) brightness to external monitor (DDC/CI)
 
-BUS=5                 # from `ddcutil detect`
+BUS=$(ddcutil detect | awk '/Display [0-9]+/{display=1} display && /I2C bus:/ {gsub("/dev/i2c-", "", $3); print $3; exit}')
+if [[ -z "$BUS" ]]; then
+    BUS=5 # fallback if detection fails
+fi
 MAX_MONITOR=100
 MIN_MONITOR=0
 BACKLIGHT="/sys/class/backlight/intel_backlight"
