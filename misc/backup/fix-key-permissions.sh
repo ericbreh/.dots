@@ -4,14 +4,12 @@
 
 set -e  # Exit on any error
 
-echo "🔧 Fixing SSH and GPG key permissions..."
-
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 # Function to print colored output
 print_status() {
@@ -167,4 +165,3 @@ fi
 
 echo ""
 print_status "Script completed successfully!"
-echo -e "${BLUE} Tip:${NC} You may need to restart your SSH agent or run 'ssh-add' to reload your SSH keys."

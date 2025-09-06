@@ -29,19 +29,6 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-# cse 293
-export PATH=$PATH:~/Utils/oss-cad-suite/bin
-export PATH=$PATH:~/Utils/zachjs-sv2v
-export PATH=$PATH:~/Utils/verible-v0.0-3831-g32b2456e/bin
-export PATH=$PATH:~/Utils/xschem/bin
-export PATH=$PATH:~/Utils/netgen/bin
-
-export PDK_ROOT=~/.volare
-
-# flutter
-# export CHROME_EXECUTABLE=$(which brave-browser)
-# export PATH=$PATH:~/Utils/flutter/bin
-
 # alias
 alias la='ls -A'
 alias rcat="command cat"
