@@ -137,7 +137,7 @@ else
 fi
 
 echo ""
-print_success "🎉 All key permissions have been fixed!"
+print_success "All key permissions have been fixed!"
 
 # Optional: Test SSH and GPG functionality
 echo ""
@@ -167,4 +167,4 @@ fi
 
 echo ""
 print_status "Script completed successfully!"
-echo -e "${BLUE}💡 Tip:${NC} You may need to restart your SSH agent or run 'ssh-add' to reload your SSH keys."
+echo -e "${BLUE} Tip:${NC} You may need to restart your SSH agent or run 'ssh-add' to reload your SSH keys."
