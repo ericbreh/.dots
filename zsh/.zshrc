@@ -1,5 +1,4 @@
-# To install Oh My Zsh, plugins, and theme
-# chsh -s $(which zsh)
+# To install Oh My Zsh, plugins, and theme - run these, then stow .zsh 
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
@@ -40,8 +39,8 @@ export PATH=$PATH:~/Utils/netgen/bin
 export PDK_ROOT=~/.volare
 
 # flutter
-export CHROME_EXECUTABLE=$(which brave-browser)
-export PATH=$PATH:~/Utils/flutter/bin
+# export CHROME_EXECUTABLE=$(which brave-browser)
+# export PATH=$PATH:~/Utils/flutter/bin
 
 # alias
 alias la='ls -A'
