@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$(cat /sys/class/power_supply/AC/online)" == "1" ]]; then
-  powerprofilesctl set balanced
+  sudo tuned-adm profile balanced
 else
-  powerprofilesctl set power-saver
+  sudo tuned-adm profile powersave
 fi
