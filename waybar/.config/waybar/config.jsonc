@@ -73,7 +73,7 @@
     "bluetooth": {
         "format": "<span>󰂯</span>",
         "format-connected": "<span>󰂱</span>",
-        "on-click": "blueberry",
+        "on-click": "blueman-manager", // blueberry
         "tooltip": true,
         "tooltip-format-connected": "{device_alias}",
         "tooltip-format-connected-battery": "{device_alias} - {device_battery_percentage}%",
