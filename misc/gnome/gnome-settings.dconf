@@ -6,6 +6,9 @@ window-height=500
 window-is-maximized=true
 window-width=540
 
+[org/blueman/general]
+window-properties=[1000, 900, 0, 0]
+
 [org/gnome/Ptyxis]
 default-profile-uuid='ffa152387dcf76347d0f82b268bb6205'
 profile-uuids=['ffa152387dcf76347d0f82b268bb6205']
@@ -26,7 +29,7 @@ size=(870, 690)
 
 [org/gnome/control-center]
 last-panel='keyboard'
-window-state=(980, 640, false)
+window-state=(980, 640, true)
 
 [org/gnome/desktop/a11y/magnifier]
 mag-factor=3.0
@@ -73,12 +76,24 @@ play-sound=true
 [org/gnome/desktop/input-sources]
 current=uint32 0
 sources=[('xkb', 'us')]
+xkb-options=['altwin:swap_lalt_lwin']
 
 [org/gnome/desktop/interface]
 accent-color='slate'
 color-scheme='prefer-dark'
+cursor-size=24
+cursor-theme='phinger-cursors-dark'
 enable-hot-corners=false
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='Adwaita Sans 11'
+font-rgba-order='rgb'
+gtk-theme='WhiteSur-Dark'
+icon-theme='Adwaita'
 show-battery-percentage=true
+text-scaling-factor=1.0
+toolbar-icons-size='large'
+toolbar-style='both-horiz'
 
 [org/gnome/desktop/notifications]
 application-children=['org-mozilla-firefox', 'org-gnome-software', 'code', 'kitty', 'org-gnome-extensions', 'org-freedesktop-problems-applet', 'gnome-power-panel', 'zen-browser']
@@ -107,6 +122,13 @@ application-id='org.mozilla.firefox.desktop'
 [org/gnome/desktop/notifications/application/zen-browser]
 application-id='zen-browser.desktop'
 
+[org/gnome/desktop/peripherals/stylus/b50e2d86]
+eraser-pressure-curve=[0, 0, 100, 100]
+pressure-curve=[0, 0, 100, 100]
+
+[org/gnome/desktop/peripherals/tablets/056a:51b6]
+mapping='absolute'
+
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
 
@@ -123,21 +145,25 @@ secondary-color='#000000000000'
 [org/gnome/desktop/search-providers]
 sort-order=['org.gnome.Settings.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Nautilus.desktop']
 
+[org/gnome/desktop/sound]
+event-sounds=true
+input-feedback-sounds=false
+
 [org/gnome/desktop/wm/keybindings]
-close=['<Alt>c']
+close=['<Super>c']
 maximize=['<Super>Up']
-move-to-monitor-down=['<Shift><Alt>j']
+move-to-monitor-down=['<Shift><Super>j']
 move-to-monitor-left=@as []
 move-to-monitor-right=@as []
-move-to-monitor-up=['<Shift><Alt>k']
-move-to-workspace-1=['<Shift><Alt>1']
-move-to-workspace-2=['<Shift><Alt>2']
-move-to-workspace-3=['<Shift><Alt>3']
-move-to-workspace-4=['<Shift><Alt>4']
+move-to-monitor-up=['<Shift><Super>k']
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
 move-to-workspace-down=['<Control><Shift><Alt>Down']
 move-to-workspace-last=@as []
-move-to-workspace-left=['<Shift><Alt>h']
-move-to-workspace-right=['<Shift><Alt>l']
+move-to-workspace-left=['<Shift><Super>h']
+move-to-workspace-right=['<Shift><Super>l']
 move-to-workspace-up=['<Control><Shift><Alt>Up']
 switch-applications=@as []
 switch-applications-backward=@as []
@@ -145,14 +171,17 @@ switch-group=['<Super>Above_Tab', '<Alt>Above_Tab']
 switch-group-backward=['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']
 switch-panels=['<Control><Alt>Tab']
 switch-panels-backward=['<Shift><Control><Alt>Tab']
-switch-to-workspace-1=['<Alt>1']
-switch-to-workspace-2=['<Alt>2']
-switch-to-workspace-3=['<Alt>3']
-switch-to-workspace-4=['<Alt>4']
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
 switch-to-workspace-last=['<Super>End']
-switch-windows=['<Alt>Tab']
-switch-windows-backward=['<Shift><Alt>Tab']
+switch-windows=['<Super>Tab']
+switch-windows-backward=['<Shift><Super>Tab']
 unmaximize=['<Super>Down', '<Alt>F5']
+
+[org/gnome/desktop/wm/preferences]
+focus-mode='sloppy'
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -196,37 +225,38 @@ initial-size-file-chooser=(890, 550)
 maximized=true
 
 [org/gnome/portal/filechooser/code]
-last-folder-path='/home/ericbreh/.dots'
+last-folder-path='/home/ericbreh/Github/ericbreh/resume'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
 last-folder-path='/home/ericbreh/Pictures/Wallpapers'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-last-coordinates=(37.854266847886329, -122.26424400000001)
+night-light-last-coordinates=(38.283928932772611, -121.971)
 night-light-temperature=uint32 3700
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
 rotate-video-lock-static=['<Super>o', 'XF86RotationLockToggle']
+screensaver=['<Alt>l']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Alt>w'
+binding='<Super>w'
 command='zen-browser'
 name='zen'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Alt>q'
+binding='<Super>q'
 command='kitty'
 name='kitty'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Alt>e'
+binding='<Super>e'
 command='code'
 name='vscode'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-binding='<Alt>d'
+binding='<Super>d'
 command='nautilus'
 name='nautilus'
 
@@ -329,18 +359,18 @@ selected-layouts=[['375685', '375685'], ['375685', '375685']]
 
 [org/gnome/shell/extensions/vitals]
 hot-sensors=['_processor_usage_', '_memory_usage_', '__temperature_avg__']
+icon-style=1
+position-in-panel=0
 show-battery=true
 
 [org/gnome/shell/keybindings]
 focus-active-notification=['<Super>n']
-screenshot=['<Super>Print']
 shift-overview-down=['<Super><Alt>Down']
 shift-overview-up=['<Super><Alt>Up']
-show-screen-recording-ui=['Print']
-show-screenshot-ui=@as []
 switch-to-application-1=['']
 switch-to-application-2=['']
 switch-to-application-3=['']
+switch-to-application-4=@as []
 toggle-message-tray=['<Super>v', '<Super>m']
 
 [org/gnome/shell/window-switcher]
@@ -350,9 +380,12 @@ current-workspace-only=false
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1757110847
+check-timestamp=int64 1757184695
 first-run=false
-flatpak-purge-timestamp=int64 1757151534
+flatpak-purge-timestamp=int64 1757213832
+install-timestamp=int64 1757185261
+packagekit-historical-updates-timestamp=uint64 1757185261
+update-notification-timestamp=int64 1757185334
 
 [org/gnome/system/location]
 enabled=true
@@ -364,13 +397,13 @@ sort-directories-first=false
 [org/gtk/settings/file-chooser]
 date-format='regular'
 location-mode='path-bar'
-show-hidden=false
+show-hidden=true
 show-size-column=true
 show-type-column=true
-sidebar-width=167
+sidebar-width=193
 sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(26, 23)
+window-position=(345, 68)
 window-size=(1231, 902)
