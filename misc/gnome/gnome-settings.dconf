@@ -1,23 +1,48 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/shell/keybindings/switch-to-application-3'
-saved-view='/org/gnome/shell/keybindings/switch-to-application-3'
+saved-pathbar-path='/org/gnome/shell/keybindings/screenshot-window'
+saved-view='/org/gnome/shell/keybindings/screenshot-window'
 show-warning=false
 window-height=500
 window-is-maximized=true
 window-width=540
 
 [org/blueman/general]
-window-properties=[1000, 900, 0, 0]
+window-properties=[1090, 1023, 0, 0]
 
 [org/gnome/Ptyxis]
 default-profile-uuid='ffa152387dcf76347d0f82b268bb6205'
 profile-uuids=['ffa152387dcf76347d0f82b268bb6205']
 window-size=(uint32 169, uint32 38)
 
+[org/gnome/Snapshot]
+capture-mode='video'
+is-maximized=true
+last-camera-id='Logitech Webcam C920-C (V4L2)'
+window-height=640
+window-width=800
+
+[org/gnome/Totem]
+active-plugins=['variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'movie-properties', 'open-directory', 'mpris', 'autoload-subtitles']
+subtitle-encoding='UTF-8'
+
+[org/gnome/Weather]
+locations=[<(uint32 2, <('Berkeley', 'KOAK', true, [(0.65832848982162007, -2.133408063190589)], [(0.66098399082523684, -2.134062020608019)])>)>]
+window-height=494
+window-maximized=false
+window-width=439
+
 [org/gnome/calendar]
 active-view='month'
 window-maximized=true
 window-size=(768, 600)
+
+[org/gnome/cheese]
+burst-delay=1000
+camera='Integrated Camera (V4L2)'
+photo-x-resolution=1280
+photo-y-resolution=720
+video-x-resolution=1280
+video-y-resolution=720
 
 [org/gnome/clocks]
 world-clocks=@aa{sv} []
@@ -28,7 +53,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='system'
 window-state=(980, 640, true)
 
 [org/gnome/desktop/a11y/magnifier]
@@ -94,9 +119,10 @@ show-battery-percentage=true
 text-scaling-factor=1.0
 toolbar-icons-size='large'
 toolbar-style='both-horiz'
+toolkit-accessibility=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-mozilla-firefox', 'org-gnome-software', 'code', 'kitty', 'org-gnome-extensions', 'org-freedesktop-problems-applet', 'gnome-power-panel', 'zen-browser']
+application-children=['org-mozilla-firefox', 'org-gnome-software', 'code', 'kitty', 'org-gnome-extensions', 'org-freedesktop-problems-applet', 'gnome-power-panel', 'zen-browser', 'zoom']
 
 [org/gnome/desktop/notifications/application/code]
 application-id='code.desktop'
@@ -121,6 +147,9 @@ application-id='org.mozilla.firefox.desktop'
 
 [org/gnome/desktop/notifications/application/zen-browser]
 application-id='zen-browser.desktop'
+
+[org/gnome/desktop/notifications/application/zoom]
+application-id='Zoom.desktop'
 
 [org/gnome/desktop/peripherals/stylus/b50e2d86]
 eraser-pressure-curve=[0, 0, 100, 100]
@@ -183,6 +212,19 @@ unmaximize=['<Super>Down', '<Alt>F5']
 [org/gnome/desktop/wm/preferences]
 focus-mode='sloppy'
 
+[org/gnome/evince/default]
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+fullscreen=false
+inverted-colors=false
+show-sidebar=true
+sidebar-page='links'
+sidebar-size=144
+sizing-mode='free'
+zoom=0.44894195216132288
+
 [org/gnome/evolution-data-server]
 migrated=true
 
@@ -224,46 +266,31 @@ initial-size=(890, 550)
 initial-size-file-chooser=(890, 550)
 maximized=true
 
+[org/gnome/nm-applet/eap/f48afd80-5aaa-40fb-a3b8-d7245ebcb846]
+ignore-ca-cert=true
+ignore-phase2-ca-cert=false
+
 [org/gnome/portal/filechooser/code]
-last-folder-path='/home/ericbreh/Github/ericbreh/resume'
+last-folder-path='/home/ericbreh/Github/meng/ME-292b/hw1'
 
 [org/gnome/portal/filechooser/org.gnome.Settings]
 last-folder-path='/home/ericbreh/Pictures/Wallpapers'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
-night-light-last-coordinates=(38.283928932772611, -121.971)
-night-light-temperature=uint32 3700
+night-light-last-coordinates=(38.271333601978945, -121.971)
+night-light-temperature=uint32 3234
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=@as []
 rotate-video-lock-static=['<Super>o', 'XF86RotationLockToggle']
 screensaver=['<Alt>l']
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>w'
-command='zen-browser'
-name='zen'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>q'
-command='kitty'
-name='kitty'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
-binding='<Super>e'
-command='code'
-name='vscode'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
-binding='<Super>d'
-command='nautilus'
-name='nautilus'
-
 [org/gnome/shell]
+app-picker-layout=[{'io.github.vectorgraphics.asymptote.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'org.gnome.Weather.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Maps.desktop': <{'position': <4>}>, 'blueman-manager.desktop': <{'position': <5>}>, 'simple-scan.desktop': <{'position': <6>}>, 'org.gnome.Settings.desktop': <{'position': <7>}>, 'org.gnome.Boxes.desktop': <{'position': <8>}>, 'org.gnome.Totem.desktop': <{'position': <9>}>, 'org.gnome.Snapshot.desktop': <{'position': <10>}>, 'org.gnome.Characters.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'btop.desktop': <{'position': <14>}>, 'org.gnome.Tour.desktop': <{'position': <15>}>, 'yelp.desktop': <{'position': <16>}>, 'org.gnome.Calculator.desktop': <{'position': <17>}>, 'org.gnome.Calendar.desktop': <{'position': <18>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <19>}>, 'org.gnome.Extensions.desktop': <{'position': <20>}>, 'org.fedoraproject.MediaWriter.desktop': <{'position': <21>}>, 'org.mozilla.firefox.desktop': <{'position': <22>}>, 'org.fontforge.FontForge.desktop': <{'position': <23>}>}, {'org.inkscape.Inkscape.desktop': <{'position': <0>}>, 'libreoffice-calc.desktop': <{'position': <1>}>, 'libreoffice-impress.desktop': <{'position': <2>}>, 'libreoffice-writer.desktop': <{'position': <3>}>, 'mupdf-gl.desktop': <{'position': <4>}>, 'nvim.desktop': <{'position': <5>}>, 'nwg-panel-config.desktop': <{'position': <6>}>, 'org.gnome.Rhythmbox3.desktop': <{'position': <7>}>, 'org.gnome.Software.desktop': <{'position': <8>}>, 'org.gnome.Ptyxis.desktop': <{'position': <9>}>, 'org.gnome.TextEditor.desktop': <{'position': <10>}>, 'uuctl.desktop': <{'position': <11>}>, 'Zoom.desktop': <{'position': <12>}>}]
 disabled-extensions=['background-logo@fedorahosted.org', 'window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['system-monitor@paradoxxx.zero.gmail.com', 'tilingshell@ferrarodomenico.com', 'blur-my-shell@aunetx', 'Vitals@CoreCoding.com', 'paperwm@paperwm.github.com']
-favorite-apps=@as []
+enabled-extensions=['system-monitor@paradoxxx.zero.gmail.com', 'tilingshell@ferrarodomenico.com', 'blur-my-shell@aunetx', 'Vitals@CoreCoding.com', 'paperwm@paperwm.github.com', 'caffeine@patapon.info', 'clipboard-indicator@tudmotu.com']
+favorite-apps=['kitty.desktop', 'zen-browser.desktop', 'code.desktop', 'org.gnome.Nautilus.desktop', 'com.spotify.Client.desktop']
 last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='48.0'
 
@@ -316,6 +343,13 @@ pipeline='pipeline_default'
 brightness=0.59999999999999998
 sigma=30
 
+[org/gnome/shell/extensions/caffeine]
+indicator-position-max=1
+user-enabled=false
+
+[org/gnome/shell/extensions/clipboard-indicator]
+toggle-menu=['<Alt>v']
+
 [org/gnome/shell/extensions/paperwm]
 gesture-horizontal-fingers=4
 horizontal-margin=10
@@ -365,13 +399,24 @@ show-battery=true
 
 [org/gnome/shell/keybindings]
 focus-active-notification=['<Super>n']
+open-new-window-application-1=['<Super><Shift>q']
+open-new-window-application-2=['<Super><Shift>w']
+open-new-window-application-3=['<Super><Shift>e']
+open-new-window-application-4=['<Super><Shift>d']
+open-new-window-application-5=['<Super><Shift>s']
 shift-overview-down=['<Super><Alt>Down']
 shift-overview-up=['<Super><Alt>Up']
-switch-to-application-1=['']
-switch-to-application-2=['']
-switch-to-application-3=['']
-switch-to-application-4=@as []
+switch-to-application-1=['<Super>q']
+switch-to-application-2=['<Super>w']
+switch-to-application-3=['<Super>e']
+switch-to-application-4=['<Super>d']
+switch-to-application-5=['<Super>s']
 toggle-message-tray=['<Super>v', '<Super>m']
+toggle-quick-settings=['<Super>m']
+
+[org/gnome/shell/weather]
+automatic-location=true
+locations=[<(uint32 2, <('Berkeley', 'KOAK', true, [(0.65832848982162007, -2.133408063190589)], [(0.66098399082523684, -2.134062020608019)])>)>]
 
 [org/gnome/shell/window-switcher]
 current-workspace-only=false
@@ -380,9 +425,9 @@ current-workspace-only=false
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1757184695
+check-timestamp=int64 1757453394
 first-run=false
-flatpak-purge-timestamp=int64 1757213832
+flatpak-purge-timestamp=int64 1757381305
 install-timestamp=int64 1757185261
 packagekit-historical-updates-timestamp=uint64 1757185261
 update-notification-timestamp=int64 1757185334
@@ -405,5 +450,5 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(345, 68)
+window-position=(1965, 29)
 window-size=(1231, 902)
