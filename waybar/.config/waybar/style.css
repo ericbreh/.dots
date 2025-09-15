@@ -82,8 +82,7 @@ tooltip {
 #temperature,
 #power-profiles-daemon,
 #custom-colorpicker,
-#idle_inhibitor,
-#idle_inhibitor.activated {
+#custom-hypridle {
     padding: 0px 5px;
     color: rgba(198, 194, 194, 1.0);
     transition: all .3s ease;
@@ -101,8 +100,7 @@ tooltip {
 #temperature:hover,
 #power-profiles-daemon:hover,
 #custom-colorpicker:hover,
-#idle_inhibitor:hover,
-#idle_inhibitor.activated:hover,
+#custom-hypridle:hover,
 #custom-expand:hover,
 #custom-endpoint:hover {
     transition: all .3s ease;

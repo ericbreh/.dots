@@ -12,7 +12,7 @@
     ],
     "modules-right": [
         "power-profiles-daemon",
-        "idle_inhibitor",
+        "custom/hypridle",
         "custom/endpoint",
         "bluetooth",
         "network",
@@ -124,12 +124,17 @@
             "power-saver": ""
         }
     },
-    "idle_inhibitor": {
+    "custom/hypridle": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         },
-        "tooltip": false,
+        "return-type": "json",
+        "exec": "~/.config/hypr/scripts/toggle-hypridle.sh status",
+        "on-click": "~/.config/hypr/scripts/toggle-hypridle.sh",
+        "interval": "once",
+        "signal": 8,
+        "tooltip": false
     }
 }
