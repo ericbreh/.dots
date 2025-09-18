@@ -33,3 +33,5 @@ fi
 alias la='ls -A'
 alias rcat="command cat"
 alias cat="bat"
+bindkey -s '^[[108;9u' 'ls\n'
+
