@@ -1,2 +1,2 @@
 require("config.lazy")
-vim.opt.clipboard = 'unnamedplus'
+require("config.vim-options")

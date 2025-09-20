@@ -20,7 +20,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Path
-export PATH="/home/ericbreh/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # fnm
 FNM_PATH="/home/ericbreh/.local/share/fnm"
