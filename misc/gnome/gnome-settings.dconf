@@ -7,7 +7,13 @@ window-is-maximized=true
 window-width=540
 
 [org/blueman/general]
-window-properties=[1090, 1023, 0, 0]
+window-properties=[1000, 900, 0, 0]
+
+[org/blueman/plugins/recentconns]
+recent-connections=[{'adapter': 'D8:F8:83:5F:CD:D1', 'address': '90:5F:7A:BB:87:46', 'alias': 'AirPods', 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1758385424.6951756'}]
+
+[org/gnome/Loupe]
+show-properties=false
 
 [org/gnome/Ptyxis]
 default-profile-uuid='ffa152387dcf76347d0f82b268bb6205'
@@ -53,7 +59,7 @@ panel-id='world'
 size=(870, 690)
 
 [org/gnome/control-center]
-last-panel='system'
+last-panel='sound'
 window-state=(980, 640, true)
 
 [org/gnome/desktop/a11y/magnifier]
@@ -220,10 +226,10 @@ enable-spellchecking=true
 fullscreen=false
 inverted-colors=false
 show-sidebar=true
-sidebar-page='links'
+sidebar-page='thumbnails'
 sidebar-size=144
 sizing-mode='free'
-zoom=0.44894195216132288
+zoom=0.6115777424299278
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -425,9 +431,9 @@ current-workspace-only=false
 locations=@av []
 
 [org/gnome/software]
-check-timestamp=int64 1757453394
+check-timestamp=int64 1758385177
 first-run=false
-flatpak-purge-timestamp=int64 1757381305
+flatpak-purge-timestamp=int64 1758331981
 install-timestamp=int64 1757185261
 packagekit-historical-updates-timestamp=uint64 1757185261
 update-notification-timestamp=int64 1757185334
@@ -436,7 +442,7 @@ update-notification-timestamp=int64 1757185334
 enabled=true
 
 [org/gtk/gtk4/settings/file-chooser]
-show-hidden=true
+show-hidden=false
 sort-directories-first=false
 
 [org/gtk/settings/file-chooser]
@@ -450,5 +456,5 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(1965, 29)
+window-position=(0, 0)
 window-size=(1231, 902)
