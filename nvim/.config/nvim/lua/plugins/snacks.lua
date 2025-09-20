@@ -21,4 +21,20 @@ return {
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 	},
+	keys = {
+		{
+			"<leader><space>",
+			function()
+				Snacks.picker.smart()
+			end,
+			desc = "Smart Find Files",
+		},
+		{
+			"<leader>gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
+		},
+	},
 }
