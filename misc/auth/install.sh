@@ -36,56 +36,26 @@ echo "Authentication configuration installed successfully!"
 echo "Backup files saved to: $BACKUP_DIR"
 echo ""
 
-# Check if fprintd is installed and enroll fingerprint
+# enroll fingerprints
 if command -v fprintd-enroll >/dev/null 2>&1; then
-    echo "Setting up fingerprint authentication..."
-    
-    # Check if user already has fingerprints enrolled
-    if fprintd-list "$USER" 2>/dev/null | grep -q "Fingerprints for user"; then
-        echo "Fingerprints already enrolled for user $USER"
-        fprintd-list "$USER"
-        echo ""
-        read -p "Do you want to enroll additional fingerprints? (y/N): " -n 1 -r
-        echo
-        if [[ $REPLY =~ ^[Yy]$ ]]; then
-            echo "Available fingers: right-thumb, right-index-finger, right-middle-finger, right-ring-finger, right-little-finger"
-            echo "                  left-thumb, left-index-finger, left-middle-finger, left-ring-finger, left-little-finger"
-            read -p "Enter finger name to enroll (or press Enter to skip): " finger_name
-            if [[ -n "$finger_name" ]]; then
-                echo "Please scan your $finger_name multiple times when prompted..."
-                fprintd-enroll -f "$finger_name" || echo "Fingerprint enrollment failed or was cancelled"
-            fi
-        fi
+    echo "Resetting fingerprints for user $USER..."
+    fprintd-delete "$USER" >/dev/null 2>&1 || true
+
+    echo "Enrolling right thumb..."
+    echo "Please scan your right thumb multiple times when prompted..."
+    if fprintd-enroll -f right-thumb; then
+        echo "Right thumb enrolled successfully!"
     else
-        echo "No fingerprints found. Enrolling your right index finger..."
-        echo "Please scan your right index finger multiple times when prompted..."
-        if fprintd-enroll; then
-            echo "Fingerprint enrolled successfully!"
-            echo ""
-            read -p "Do you want to enroll additional fingerprints for backup? (y/N): " -n 1 -r
-            echo
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
-                echo "Available fingers: right-thumb, right-middle-finger, right-ring-finger, right-little-finger"
-                echo "                  left-thumb, left-index-finger, left-middle-finger, left-ring-finger, left-little-finger"
-                read -p "Enter finger name to enroll (or press Enter to skip): " finger_name
-                if [[ -n "$finger_name" ]]; then
-                    echo "Please scan your $finger_name multiple times when prompted..."
-                    fprintd-enroll -f "$finger_name" || echo "Additional fingerprint enrollment failed or was cancelled"
-                fi
-            fi
-        else
-            echo "Fingerprint enrollment failed or was cancelled"
-            echo "You can manually enroll fingerprints later using: fprintd-enroll"
-        fi
+        echo "Fingerprint enrollment failed or was cancelled"
     fi
-    
+
     echo ""
     echo "Current enrolled fingerprints:"
     fprintd-list "$USER" 2>/dev/null || echo "No fingerprints enrolled"
 else
-    echo "Warning: fprintd not found. Please install fprintd package for fingerprint authentication:"
-    echo "  sudo pacman -S fprintd"
+    echo "Warning: fprintd not found. Please install it first:"
 fi
+
 
 echo ""
 echo "To restore original files, run:"
