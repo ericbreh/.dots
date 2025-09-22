@@ -17,7 +17,7 @@ toggle_hypridle() {
         echo "hypridle stopped" >&2
         # Send notification if notify-send is available
         if command -v notify-send > /dev/null; then
-            notify-send "Hypridle" "Idle inhibitor enabled" -i "security-high"
+            notify-send "Hypridle" "Idle inhibitor enabled" -i caffeine-cup-full-symbolic
         fi
     else
         # If not running, start it
@@ -25,7 +25,7 @@ toggle_hypridle() {
         echo "hypridle started" >&2
         # Send notification if notify-send is available
         if command -v notify-send > /dev/null; then
-            notify-send "Hypridle" "Idle inhibitor disabled" -i "security-low"
+            notify-send "Hypridle" "Idle inhibitor disabled" -i caffeine-cup-empty-symbolic
         fi
     fi
     

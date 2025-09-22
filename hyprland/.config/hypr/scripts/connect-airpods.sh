@@ -18,15 +18,15 @@ if bluetoothctl info "$AIRPODS_MAC" | grep -q "Connected: yes"; then
     # Disconnect AirPods
     echo "Disconnecting AirPods..."
     if bluetoothctl disconnect "$AIRPODS_MAC"; then
-        notify-send "AirPods" "Disconnected from AirPods" -i bluetooth-disabled
+        notify-send "AirPods" "Disconnected from AirPods" -i bluetooth-disabled-symbolic
     else
-        notify-send "AirPods" "Failed to disconnect AirPods" -i dialog-error
+        notify-send "AirPods" "Failed to disconnect AirPods" -i dialog-error-symbolic
     fi
 else
     # Connect to AirPods
     echo "Connecting to AirPods..."
     if bluetoothctl connect "$AIRPODS_MAC"; then
-        notify-send "AirPods" "Connected to AirPods" -i bluetooth-active
+        notify-send "AirPods" "Connected to AirPods" -i bluetooth-active-symbolic
         
         # Switch audio output to AirPods
         sleep 2
@@ -36,6 +36,6 @@ else
             echo "Audio output switched to AirPods"
         fi
     else
-        notify-send "AirPods" "Failed to connect to AirPods" -i dialog-error
+        notify-send "AirPods" "Failed to connect to AirPods" -i dialog-error-symbolic
     fi
 fi

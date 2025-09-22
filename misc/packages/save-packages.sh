@@ -7,7 +7,8 @@ if command -v pacman &>/dev/null; then
     echo "Detected Arch Linux"
 
     echo "Saving AUR packages..."
-    pacman -Qqm > aur-packages.txt
+#    pacman -Qqm > aur-packages.txt
+    pacman -Qqm | grep -v -- "-debug" > aur-packages.txt
     echo "AUR packages saved to aur-packages.txt ($(wc -l < aur-packages.txt) packages)"
 
     echo "Saving pacman packages..."

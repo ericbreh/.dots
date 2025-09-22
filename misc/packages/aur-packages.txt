@@ -1,12 +1,13 @@
-fnm-bin
+elecwhat-bin
 localsend-bin
 mediawriter
 paru
-paru-debug
 phinger-cursors
 slack-desktop-wayland
 tzupdate
 visual-studio-code-bin
-wlogout
+whitesur-gtk-theme
+whitesur-icon-theme
+wlogout-git
 zen-browser-bin
 zoom

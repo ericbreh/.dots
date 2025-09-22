@@ -31,6 +31,7 @@ gnome-keyring
 go
 greetd
 greetd-tuigreet
+grub
 gst-plugin-pipewire
 gtk2
 hypridle
@@ -42,7 +43,9 @@ hyprshot
 hyprsunset
 ifuse
 intel-ucode
+iwd
 kitty
+lazygit
 libpulse
 libreoffice-fresh
 linux
@@ -54,6 +57,7 @@ neovim
 networkmanager
 nwg-look
 openssh
+os-prober
 pandoc-cli
 pavucontrol
 perl-image-exiftool
@@ -63,8 +67,7 @@ pipewire-jack
 pipewire-pulse
 podman
 polkit-gnome
-power-profiles-daemon
-rofi-wayland
+ripgrep
 rsync
 sof-firmware
 spotify-launcher
@@ -76,6 +79,10 @@ texlive-fontsrecommended
 texlive-latex
 texlive-latexextra
 texlive-latexrecommended
+tmux
+tuned
+tuned-ppd
+usbutils
 uv
 waybar
 wev
