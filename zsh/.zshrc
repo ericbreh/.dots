@@ -24,4 +24,6 @@ alias dots="cd ~/.dots"
 # Path
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-# source /opt/ros/humble/setup.zsh
+if [ -f /opt/ros/humble/setup.zsh ]; then source /opt/ros/humble/setup.zsh; fi
+
+eval "$(zoxide init zsh)"
