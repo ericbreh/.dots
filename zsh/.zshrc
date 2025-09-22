@@ -1,3 +1,5 @@
+if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" != "vscode" ]; then tmux attach -t main || tmux new -s main; fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -12,20 +14,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Path
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# fnm
-FNM_PATH="/home/ericbreh/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/ericbreh/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
-
 # alias
 alias la='ls -A'
 alias rcat="command cat"
 alias cat="bat"
 bindkey -s '^[[108;9u' 'ls\n'
 
+# Path
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+source /opt/ros/humble/setup.zsh
