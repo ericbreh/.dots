@@ -15,12 +15,13 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # alias
-alias la='ls -A'
+alias la="ls -A"
 alias rcat="command cat"
 alias cat="bat"
-bindkey -s '^[[108;9u' 'ls\n'
+bindkey -s "^[[108;9u" "ls\n"
+alias dots="cd ~/.dots"
 
 # Path
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-source /opt/ros/humble/setup.zsh
+# source /opt/ros/humble/setup.zsh
