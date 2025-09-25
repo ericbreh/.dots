@@ -6,4 +6,7 @@ return {
 		vim.g.mkdp_filetypes = { "markdown" }
 	end,
 	ft = { "markdown" },
+	keys = {
+		{ "<leader>km", "<cmd>MarkdownPreviewToggle<cr>", desc = "Toggle Markdown Preview" },
+	},
 }
