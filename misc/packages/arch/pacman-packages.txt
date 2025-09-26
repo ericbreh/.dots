@@ -9,6 +9,7 @@ bluez-obex
 bluez-utils
 brightnessctl
 btop
+cava
 cheese
 cliphist
 cmatrix
@@ -19,6 +20,7 @@ efibootmgr
 evince
 fastfetch
 fd
+feh
 firefox
 fprintd
 fzf
@@ -46,6 +48,7 @@ intel-ucode
 iwd
 kitty
 lazygit
+less
 libpulse
 libreoffice-fresh
 linux
@@ -55,6 +58,7 @@ nautilus
 ncdu
 neovim
 networkmanager
+npm
 nwg-look
 openssh
 os-prober
@@ -72,6 +76,7 @@ rsync
 sof-firmware
 spotify-launcher
 stow
+stylua
 swaync
 swayosd
 texlive-binextra
@@ -89,5 +94,6 @@ wev
 wireplumber
 wofi
 xdg-desktop-portal-hyprland
+zoxide
 zram-generator
 zsh
