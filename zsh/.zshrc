@@ -20,11 +20,16 @@ export PATH="$HOME/.cargo/bin:$PATH"
 if [ -f /opt/ros/humble/setup.zsh ]; then source /opt/ros/humble/setup.zsh; fi
 
 # alias
-alias la="ls -A"
 alias rcat="command cat"
 alias cat="bat"
 bindkey -s "^[[108;9u" "ls\n"
 alias dots="cd ~/.dots"
 alias cd="z"
+alias ls="eza --group-directories-first --icons=auto"
+alias la="ls -A"
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
+
+
 
 eval "$(zoxide init zsh)"
