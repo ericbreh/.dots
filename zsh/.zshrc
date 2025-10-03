@@ -27,6 +27,7 @@ alias ls="eza --group-directories-first --icons=auto"
 alias la="ls -A"
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
+alias feh="feh --image-bg black -Z -."
 
 # Path
 export PATH="$HOME/.local/bin:$PATH"
