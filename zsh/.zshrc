@@ -24,7 +24,6 @@ alias rcat="command cat"
 alias cat="bat"
 alias dots="cd ~/.dots"
 alias home="cd ~"
-alias cd="z"
 alias ls="eza --group-directories-first --icons=auto"
 alias la="ls -A"
 alias lt='eza --tree --level=2 --long --icons --git'
@@ -33,7 +32,16 @@ alias feh="feh --image-bg black -Z -."
 open() {
   xdg-open "$@" >/dev/null 2>&1 &
 }
-
+alias cd="zd"
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@"
+  fi
+}
 
 
 # Path
