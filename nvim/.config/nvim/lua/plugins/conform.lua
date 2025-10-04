@@ -22,6 +22,8 @@ return {
 			lua = { "stylua" },
 			markdown = { "markdownlint" },
 			tex = { "latexindent" },
+			python = { "black" },
+			bash = { "shfmt" },
 		},
 		-- Set default options
 		default_format_opts = {

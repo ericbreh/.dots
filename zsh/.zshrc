@@ -14,6 +14,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export EDITOR="nvim"
+
 setopt GLOB_DOTS
 zstyle ':completion:*' special-dirs false
 
@@ -28,6 +30,11 @@ alias la="ls -A"
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias feh="feh --image-bg black -Z -."
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
+
 
 # Path
 export PATH="$HOME/.local/bin:$PATH"
