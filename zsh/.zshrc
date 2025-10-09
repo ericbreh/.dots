@@ -23,7 +23,6 @@ zstyle ':completion:*' special-dirs false
 alias rcat="command cat"
 alias cat="bat"
 alias dots="cd ~/.dots"
-alias home="cd ~"
 alias cd="z"
 alias ls="eza --group-directories-first --icons=auto"
 alias la="ls -A"
@@ -31,7 +30,7 @@ alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias feh="feh --image-bg black -Z -."
 open() {
-  xdg-open "$@" >/dev/null 2>&1 &
+  nohup xdg-open "$@" >/dev/null 2>&1 &
 }
 
 
