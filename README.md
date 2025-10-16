@@ -1,6 +1,5 @@
 # dots
 
 ```bash
-stow hyprland kitty swaync waybar wlogout wofi zsh git nvim 
+stow hyprland kitty nvim swaync tmux waybar wlogout wofi zsh git  
 ```
-
