@@ -18,6 +18,8 @@ export EDITOR="nvim"
 
 setopt GLOB_DOTS
 zstyle ':completion:*' special-dirs false
+compdef _cd zd
+zstyle ':completion:*:cd:*' tag-order 'directories'
 
 # alias
 alias rcat="command cat"
@@ -47,6 +49,9 @@ zd() {
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 if [ -f /opt/ros/humble/setup.zsh ]; then source /opt/ros/humble/setup.zsh; fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 
