@@ -43,6 +43,18 @@ zd() {
     z "$@"
   fi
 }
+copy() {
+  if [ -z "$1" ]; then
+    echo "Usage: copy <filename>"
+    return 1
+  fi
+  if [ ! -r "$1" ]; then
+    echo "Error: '$1' not found or not readable."
+    return 1
+  fi
+  wl-copy < "$1"
+  echo "Contents of '$1' copied to clipboard."
+}
 
 
 # Path
