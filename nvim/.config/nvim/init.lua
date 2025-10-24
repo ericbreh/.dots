@@ -182,6 +182,11 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.setloclist, { desc = 'Open Diagnostic [E]rror list' })
+vim.keymap.set('n', '<leader>ke', function()
+  local current_virtual_text_setting = vim.diagnostic.config().virtual_text
+  vim.diagnostic.config { virtual_text = not current_virtual_text_setting }
+end, { desc = 'Toggle[k] Inlay Diagnostic [E]rrors' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
