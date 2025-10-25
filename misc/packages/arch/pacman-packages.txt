@@ -64,6 +64,7 @@ neovim
 networkmanager
 network-manager-applet
 npm
+ntfs-3g
 nwg-look
 openssh
 os-prober
