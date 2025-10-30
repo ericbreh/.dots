@@ -24,7 +24,6 @@ zstyle ':completion:*:cd:*' tag-order 'directories'
 # alias
 alias rcat="command cat"
 alias cat="bat"
-alias dots="cd ~/.dots"
 alias ls="eza --group-directories-first --icons=auto"
 alias la="ls -A"
 alias lt='eza --tree --level=2 --long --icons --git'
