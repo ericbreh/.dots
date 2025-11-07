@@ -775,10 +775,26 @@ require('lazy').setup({
         mode = '',
         desc = '[F]ormat buffer',
       },
+      {
+        '<leader>kf',
+        function()
+          if vim.b.disable_autoformat then
+            vim.b.disable_autoformat = false
+            vim.notify 'Enabled autoformat for current buffer'
+          else
+            vim.b.disable_autoformat = true
+            vim.notify 'Disabled autoformat for current buffer'
+          end
+        end,
+        desc = 'Toggle[k] auto [F]ormat on save',
+      },
     },
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
+        if vim.b[bufnr].disable_autoformat then
+          return
+        end
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
