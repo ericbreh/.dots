@@ -728,7 +728,20 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'stylua',
+        'lua_ls',
+        'bashls',
+        'shfmt',
+        'basedpyright',
+        'black',
+        'matlab_ls',
+        'texlab',
+        'latexindent',
+        'markdownlint',
+        'nil_ls',
+        'jq',
+        'alejandra',
+        'rust_analyzer',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -762,10 +775,26 @@ require('lazy').setup({
         mode = '',
         desc = '[F]ormat buffer',
       },
+      {
+        '<leader>kf',
+        function()
+          if vim.b.disable_autoformat then
+            vim.b.disable_autoformat = false
+            vim.notify 'Enabled autoformat for current buffer'
+          else
+            vim.b.disable_autoformat = true
+            vim.notify 'Disabled autoformat for current buffer'
+          end
+        end,
+        desc = 'Toggle[k] auto [F]ormat on save',
+      },
     },
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
+        if vim.b[bufnr].disable_autoformat then
+          return
+        end
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
@@ -785,6 +814,9 @@ require('lazy').setup({
         tex = { 'latexindent' },
         python = { 'black' },
         bash = { 'shfmt' },
+        nix = { 'alejandra' },
+        rust = { 'rustfmt' },
+        json = { 'jq' },
       },
     },
   },
