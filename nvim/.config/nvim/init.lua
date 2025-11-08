@@ -182,10 +182,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.setloclist, { desc = 'Open Diagnostic [E]rror list' })
-vim.keymap.set('n', '<leader>ke', function()
-  local current_virtual_text_setting = vim.diagnostic.config().virtual_text
-  vim.diagnostic.config { virtual_text = not current_virtual_text_setting }
-end, { desc = 'Toggle[k] Inlay Diagnostic [E]rrors' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -641,32 +637,48 @@ require('lazy').setup({
 
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
+      local diagnostics_signs_on = vim.g.have_nerd_font
+          and {
+            text = {
+              [vim.diagnostic.severity.ERROR] = '󰅚 ',
+              [vim.diagnostic.severity.WARN] = '󰀪 ',
+              [vim.diagnostic.severity.INFO] = '󰋽 ',
+              [vim.diagnostic.severity.HINT] = '󰌶 ',
+            },
+          }
+        or {}
+      local diagnostics_virtual_text_on = {
+        source = 'if_many',
+        spacing = 2,
+        format = function(diagnostic)
+          local diagnostic_message = {
+            [vim.diagnostic.severity.ERROR] = diagnostic.message,
+            [vim.diagnostic.severity.WARN] = diagnostic.message,
+            [vim.diagnostic.severity.INFO] = diagnostic.message,
+            [vim.diagnostic.severity.HINT] = diagnostic.message,
+          }
+          return diagnostic_message[diagnostic.severity]
+        end,
+      }
       vim.diagnostic.config {
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
-        signs = vim.g.have_nerd_font and {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
-          },
-        } or {},
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
+        signs = diagnostics_signs_on,
+        virtual_text = diagnostics_virtual_text_on,
       }
+
+      vim.keymap.set('n', '<leader>ke', function()
+        local current_signs = vim.diagnostic.config().signs
+        if current_signs and current_signs ~= false then
+          vim.diagnostic.config { virtual_text = false, signs = false }
+        else
+          vim.diagnostic.config {
+            virtual_text = diagnostics_virtual_text_on,
+            signs = diagnostics_signs_on,
+          }
+        end
+      end, { desc = 'Toggle[k] [E]rrors' })
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
