@@ -31,9 +31,10 @@ restore() {
 
 restore "$HOME/Github/secrets" Github/secrets
 restore "$HOME/Pictures" Pictures
-restore "$HOME/.dots" .dots
 restore "$HOME/Documents" Documents
 restore "$HOME/Movies/" Movies
+restore "$HOME/.dots" .dots
+restore "$HOME/nix-config/" nix-config
 
 restore "$HOME/.ssh" .ssh
 restore "$HOME/.gnupg" .gnupg
