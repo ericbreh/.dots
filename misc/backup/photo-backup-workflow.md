@@ -3,7 +3,7 @@
 > [!CAUTION]
 > Check mount point!
 
-## Add photos to `photos-unsorted`
+## Add photos to `Photos-unsorted`
 
 ```sh
 rsync -a --partial --info=progress2,stats2 /path/to/source/ /path/to/destination/
@@ -22,16 +22,16 @@ exiftool "-AllDates<Filename" -overwrite_original .
 
 ## Deduplicate with `czkawka`
 
-* Add both `/media/ericbreh/BUFFALO/photos-unsorted` and `/media/ericbreh/BUFFALO/photos` to the directories list.
+* Add both `/media/ericbreh/BUFFALO/Photos-unsorted` and `/media/ericbreh/BUFFALO/Photos` to the directories list.
 
 ## Organize with `exiftool`
 
 ```sh
-exiftool -r -d /media/ericbreh/BUFFALO/photos/%Y/%m \
+exiftool -r -d /media/ericbreh/BUFFALO/Photos/%Y/%m \
 '-Directory<DateTimeOriginal' \
 '-Directory<CreateDate' \
 '-Directory<FileModifyDate' \
-/media/ericbreh/BUFFALO/photos-unsorted
+/media/ericbreh/BUFFALO/Photos-unsorted
 ```
 
 #### Cleanup

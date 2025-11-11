@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
 fi
 
 MOUNT_POINT="$1"
-BACKUP_DIR="$MOUNT_POINT/computer"
+BACKUP_DIR="$MOUNT_POINT/Computer"
 
 if ! mountpoint -q "$MOUNT_POINT"; then
 	echo "Backup drive not mounted. Exiting."
@@ -35,5 +35,6 @@ restore "$HOME/.ssh" .ssh
 restore "$HOME/.gnupg" .gnupg
 restore "$HOME/.dots" .dots
 restore "$HOME/Documents" Documents
+restore "$HOME/Movies/" Movies
 
 echo "Restore completed!"
