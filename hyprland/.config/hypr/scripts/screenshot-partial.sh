@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 pkill -x slurp 2>/dev/null
 

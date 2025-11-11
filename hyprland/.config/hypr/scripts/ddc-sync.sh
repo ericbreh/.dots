@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Sync laptop (intel_backlight) brightness to external monitor (DDC/CI)
 
 BUS=$(ddcutil detect | awk '/Display [0-9]+/{display=1} display && /I2C bus:/ {gsub("/dev/i2c-", "", $3); print $3; exit}')

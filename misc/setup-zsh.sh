@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Toggle hyprsunset on/off
 # Check if hyprsunset is running

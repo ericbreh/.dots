@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Define the directory to search. You can change this to your preferred directory.
 SEARCH_DIR="$HOME"

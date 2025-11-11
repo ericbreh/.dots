@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 get_status() {
     if pgrep -x "hypridle" > /dev/null; then

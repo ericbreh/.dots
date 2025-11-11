@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # toggle-mute.sh <audio|mic> [sync]
 # Without the optional second arg (or anything other than 'sync'), this script
