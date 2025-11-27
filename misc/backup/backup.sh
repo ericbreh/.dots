@@ -37,10 +37,9 @@ mkdir -p "$BACKUP_DIR"
 backup "$HOME/Github/secrets/" Github/secrets
 backup "$HOME/Pictures/" Pictures "Screenshots"
 backup "$HOME/Documents/" Documents
-backup "$HOME/Movies/" Movies
-backup "$HOME/.dots/" .dots
+# backup "$HOME/Movies/" Movies
+backup "$HOME/dotfiles/" dotfiles
 backup "$HOME/nix-config/" nix-config
 backup "$HOME/.ssh/" .ssh
-backup "$HOME/.gnupg/" .gnupg
 
 echo "Backup completed!"

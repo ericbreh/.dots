@@ -32,24 +32,16 @@ restore() {
 restore "$HOME/Github/secrets" Github/secrets
 restore "$HOME/Pictures" Pictures
 restore "$HOME/Documents" Documents
-restore "$HOME/Movies/" Movies
-restore "$HOME/.dots" .dots
-restore "$HOME/nix-config/" nix-config
-
-restore "$HOME/.ssh" .ssh
-restore "$HOME/.gnupg" .gnupg
+# restore "$HOME/Movies/" Movies
+# restore "$HOME/dotfiles" dotfiles
+# restore "$HOME/nix-config/" nix-config
+# restore "$HOME/.ssh" .ssh
 
 echo "Restore completed!"
 
-if [ -d "$HOME/.ssh" ]; then
-    chmod 700 "$HOME/.ssh"
-    chmod 600 "$HOME/.ssh"/{id_*,authorized_keys,config} 2>/dev/null || true
-    chmod 644 "$HOME/.ssh"/{*.pub,known_hosts} 2>/dev/null || true
-    echo "SSH permissions fixed"
-fi
-
-if [ -d "$HOME/.gnupg" ]; then
-    chmod -R 700 "$HOME/.gnupg"
-    chmod 600 "$HOME/.gnupg"/{*.gpg,*.conf} 2>/dev/null || true
-    echo "GPG permissions fixed"
-fi
+# if [ -d "$HOME/.ssh" ]; then
+#     chmod 700 "$HOME/.ssh"
+#     chmod 600 "$HOME/.ssh"/{id_*,authorized_keys,config} 2>/dev/null || true
+#     chmod 644 "$HOME/.ssh"/{*.pub,known_hosts} 2>/dev/null || true
+#     echo "SSH permissions fixed"
+# fi

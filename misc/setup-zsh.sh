@@ -2,7 +2,7 @@
 set -e
 
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-DOTS_DIR="$HOME/.dots"
+DOTS_DIR="$HOME/dotfiles"
 
 # Check if Oh My Zsh is already installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -29,7 +29,7 @@ else
 		rm -f "$HOME/.zshrc"
 		stow -t "$HOME" zsh
 	else
-		echo "Error: .dots directory not found at $DOTS_DIR. Skipping stow."
+		echo "Error: dotfiles directory not found at $DOTS_DIR. Skipping stow."
 		exit 1
 	fi
 
