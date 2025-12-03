@@ -2,33 +2,33 @@
 set -e
 
 if [ -z "$1" ]; then
-	echo "Error: No backup destination provided."
-	echo "Usage: $0 /path/to/mount/point"
-	exit 1
+    echo "Error: No backup destination provided."
+    echo "Usage: $0 /path/to/mount/point"
+    exit 1
 fi
 
 MOUNT_POINT="$1"
 BACKUP_DIR="$MOUNT_POINT/Computer"
 
 if ! mountpoint -q $MOUNT_POINT; then
-	echo "Backup drive not mounted. Exiting."
-	exit 1
+    echo "Backup drive not mounted. Exiting."
+    exit 1
 fi
 
 backup() {
-	local source="$1"
-	local dest="$BACKUP_DIR/$2"
-	local exclude="$3"
+    local source="$1"
+    local dest="$BACKUP_DIR/$2"
+    local exclude="$3"
 
-	mkdir -p "$dest"
+    mkdir -p "$dest"
 
-	if [ -n "$exclude" ]; then
-		echo "Backing up $source to $dest (excluding $exclude)"
-		rsync -a --delete --partial --info=progress2,stats2 --exclude="$exclude" "$source" "$dest"
-	else
-		echo "Backing up $source to $dest"
-		rsync -a --delete --partial --info=progress2,stats2 "$source" "$dest"
-	fi
+    if [ -n "$exclude" ]; then
+        echo "Backing up $source to $dest (excluding $exclude)"
+        rsync -a --delete --partial --info=progress2,stats2 --exclude="$exclude" "$source" "$dest"
+    else
+        echo "Backing up $source to $dest"
+        rsync -a --delete --partial --info=progress2,stats2 "$source" "$dest"
+    fi
 
 }
 
@@ -36,10 +36,10 @@ mkdir -p "$BACKUP_DIR"
 
 backup "$HOME/Github/secrets/" Github/secrets
 backup "$HOME/Pictures/" Pictures "Screenshots"
+backup "$HOME/Videos/" Videos
 backup "$HOME/Documents/" Documents
-# backup "$HOME/Movies/" Movies
 backup "$HOME/dotfiles/" dotfiles
 backup "$HOME/nix-config/" nix-config
-backup "$HOME/.ssh/" .ssh
+backup "$HOME/.ssh/" ssh
 
 echo "Backup completed!"

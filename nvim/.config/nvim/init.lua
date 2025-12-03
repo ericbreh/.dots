@@ -678,7 +678,22 @@ require('lazy').setup({
         bashls = {},
         nixd = {},
         rust_analyzer = {},
-        basedpyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = 'basic',
+                autoImportCompletions = true,
+                diagnosticSeverityOverrides = {
+                  reportMissingTypeStubs = 'none',
+                  reportUnknownMemberType = 'none',
+                  reportUnknownArgumentType = 'none',
+                  reportMissingImports = 'warning',
+                },
+              },
+            },
+          },
+        },
         texlab = {},
       }
       -- NOTE: setup servers
