@@ -36,7 +36,7 @@ mkdir -p "$BACKUP_DIR"
 
 backup "$HOME/Github/secrets/" Github/secrets
 backup "$HOME/Pictures/" Pictures "Screenshots"
-backup "$HOME/Videos/" Videos
+backup "$HOME/Videos/" Videos "Screencasts"
 backup "$HOME/Documents/" Documents
 backup "$HOME/dotfiles/" dotfiles
 backup "$HOME/nix-config/" nix-config

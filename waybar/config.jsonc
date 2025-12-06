@@ -3,23 +3,20 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
+        "hyprland/workspaces",
         "cpu",
         "memory",
-        "temperature"
+        "temperature",
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "clock",
     ],
     "modules-right": [
         "power-profiles-daemon",
         "custom/hypridle",
-        "custom/endpoint",
         "bluetooth",
         "network",
         "battery",
-        "clock",
-        "custom/endpoint",
-        "custom/notification"
     ],
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -33,8 +30,6 @@
                 1,
                 2,
                 3,
-                4,
-                5
             ]
         }
     },
@@ -73,7 +68,7 @@
     "bluetooth": {
         "format": "<span>󰂯</span>",
         "format-connected": "<span>󰂱</span>",
-        "on-click": "blueberry", 
+        "on-click": "blueberry",
         "tooltip": true,
         "tooltip-format-connected": "{device_alias}",
         "tooltip-format-connected-battery": "{device_alias} - {device_battery_percentage}%",
@@ -99,12 +94,12 @@
         ]
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": " {usage}%",
         "tooltip": false,
         "on-click": "kitty btop"
     },
     "memory": {
-        "format": "󰘚 {}%",
+        "format": " {}%",
         "tooltip": false,
         "on-click": "kitty btop"
     },
