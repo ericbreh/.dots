@@ -1,6 +1,0 @@
-[terminal]
-vt = 1
-
-[default_session]
-command = "tuigreet -r --cmd /usr/local/bin/start-hyprland"
-user = "greeter"

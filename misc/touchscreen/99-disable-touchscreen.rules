@@ -1,1 +1,0 @@
-ATTRS{name}=="Wacom Pen and multitouch sensor Finger", ENV{LIBINPUT_IGNORE_DEVICE}="1"

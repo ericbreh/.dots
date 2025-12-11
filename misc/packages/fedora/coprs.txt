@@ -1,5 +1,0 @@
-copr.fedorainfracloud.org/dejan/lazygit
-copr.fedorainfracloud.org/markupstart/SwayOSD
-copr.fedorainfracloud.org/phracek/PyCharm
-copr.fedorainfracloud.org/sneexy/zen-browser
-copr.fedorainfracloud.org/solopasha/hyprland
