@@ -7,11 +7,11 @@ return {
   opts = {
     width = 130,
   },
-  init = function()
-    vim.api.nvim_create_autocmd('VimEnter', {
-      callback = function()
-        vim.cmd 'NoNeckPain'
-      end,
-    })
-  end,
+  -- init = function()
+  --   vim.api.nvim_create_autocmd('VimEnter', {
+  --     callback = function()
+  --       vim.cmd 'NoNeckPain'
+  --     end,
+  --   })
+  -- end,
 }

@@ -1,3 +1,5 @@
+@import url("/home/ericbreh/.config/hypr/colors.css");
+
 @define-color bg rgba(30, 30, 30, 0.95);
 @define-color bg-hover rgba(45, 45, 45, 0.98);
 @define-color text rgba(230, 230, 230, 1.0);
@@ -25,8 +27,8 @@ window {
     all: unset;
     padding: 20px;
     border-radius: 12px;
-    background-color: @bg;
-    border: 1px solid rgba(60, 60, 60, 0.8);
+    background-color: @color-900;
+    border: 1px solid @color-600;
 }
 
 #inner-box {
@@ -49,15 +51,14 @@ window {
     all: unset;
     margin: 20px;
     padding: 20px;
-    color: @text;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    color: @color-100;
     border-radius: 10px;
-    background-color: rgba(50, 50, 50, 0.6);
+    background-color: @color-800;
 }
 
 #input image {
     border: none;
-    color: @accent-secondary;
+    color: @color-500;
     padding-right: 10px;
 }
 
@@ -73,7 +74,7 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: @text;
+    color: @color-300;
     outline: none;
 }
 
@@ -85,20 +86,19 @@ window {
 
 #entry arrow {
     border: none;
-    color: @accent-secondary;
+    color: @color-500;
 }
 
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.05);
     border: none;
     border-radius: 8px;
-    background-color: @bg-hover;
+    background-color: @color-800;
 }
 
 #entry:selected #text {
-    color: @accent-highlight;
+    color: @color-300;
 }
 
 #entry:drop(active) {
-    background-color: @accent-primary !important;
+    background-color: @color-500;
 }
