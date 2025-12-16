@@ -58,7 +58,7 @@ button {
 }
 
 button:focus {
-    background-color: @color-700;
+    background-color: @color-600;
     color: @color-50;
     background-position: center;
 }

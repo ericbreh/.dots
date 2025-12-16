@@ -1,7 +1,7 @@
 @import url("../hypr/colors.css");
 
 * {
-    font-size: 15px;
+    font-size: 14px;
     font-family: "MesloLGS Nerd Font Propo";
 }
 
@@ -51,17 +51,17 @@ tooltip {
 }
 
 #workspaces button {
-    color: @color-700;
+    color: @color-600;
 }
 
 #workspaces button.active,
 #workspaces button.empty.active {
-    color: @color-500;
+    color: @color-400;
 }
 
 #workspaces button:hover,
 #workspaces button.empty:hover {
-    color: @color-600;
+    color: @color-500;
 }
 
 #workspaces button.empty {
@@ -80,7 +80,7 @@ tooltip {
 #power-profiles-daemon,
 #custom-hypridle {
     padding: 0px 5px;
-    color: @color-300;
+    color: @color-50;
     transition: all .3s ease;
 }
 
@@ -96,25 +96,16 @@ tooltip {
 #power-profiles-daemon:hover,
 #custom-hypridle:hover {
     transition: all .3s ease;
-    color: @color-600;
+    color: @color-500;
 }
 
 /* Battery states */
 #battery.charging {
     color: @color-green;
 }
-
 #battery.warning {
-    background-color: unset;
-    color: @color-orange;
+    color: @color-yellow;
 }
-
-#battery.critical,
-#temperature.critical {
+#battery.critical {
     color: @color-red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }

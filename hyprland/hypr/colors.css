@@ -9,6 +9,7 @@
 @define-color color-200 #e4e4e7;
 @define-color color-100 #f4f4f5;
 @define-color color-50 #fafafa;
-@define-color color-red #991b1b;
-@define-color color-green #166534;
-@define-color color-orange #9a3412;
+
+@define-color color-green #22c55e;
+@define-color color-yellow #eab308;
+@define-color color-red #ef4444;

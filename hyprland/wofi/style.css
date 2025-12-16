@@ -51,14 +51,14 @@ window {
     all: unset;
     margin: 20px;
     padding: 20px;
-    color: @color-100;
+    color: @color-50;
     border-radius: 10px;
-    background-color: @color-800;
+    background-color: @color-700;
 }
 
 #input image {
     border: none;
-    color: @color-500;
+    color: @color-400;
     padding-right: 10px;
 }
 
@@ -74,7 +74,7 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: @color-300;
+    color: @color-50;
     outline: none;
 }
 
@@ -84,21 +84,12 @@ window {
     padding: 10px;
 }
 
-#entry arrow {
-    border: none;
-    color: @color-500;
-}
-
 #entry:selected {
     border: none;
     border-radius: 8px;
-    background-color: @color-800;
+    background-color: @color-700;
 }
 
 #entry:selected #text {
-    color: @color-300;
-}
-
-#entry:drop(active) {
-    background-color: @color-500;
+    color: @color-50;
 }

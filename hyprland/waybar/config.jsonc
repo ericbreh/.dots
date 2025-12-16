@@ -26,13 +26,6 @@
             "default": "",
             "empty": ""
         },
-        "persistent-workspaces": {
-            "*": [
-                1,
-                2,
-                3,
-            ]
-        }
     },
     "custom/endpoint": {
         "format": "|",
@@ -78,13 +71,12 @@
     "battery": {
         "interval": 30,
         "states": {
-            "good": 95,
             "warning": 20,
             "critical": 10
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
-        "format-alt": "{time} {icon}",
+        "format-full": "{capacity}% 󰂄",
         "format-icons": [
             "󰁺",
             "󰁻",
@@ -109,7 +101,6 @@
         "on-click": "kitty btop"
     },
     "temperature": {
-        "critical-threshold": 80,
         "format": " {temperatureC}°C",
         "tooltip": false,
         "on-click": "kitty btop"
