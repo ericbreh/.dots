@@ -678,22 +678,23 @@ require('lazy').setup({
         bashls = {},
         nixd = {},
         rust_analyzer = {},
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              analysis = {
-                typeCheckingMode = 'basic',
-                autoImportCompletions = true,
-                diagnosticSeverityOverrides = {
-                  reportMissingTypeStubs = 'none',
-                  reportUnknownMemberType = 'none',
-                  reportUnknownArgumentType = 'none',
-                  reportMissingImports = 'warning',
-                },
-              },
-            },
-          },
-        },
+        ty = {},
+        -- basedpyright = {
+        --   settings = {
+        --     basedpyright = {
+        --       analysis = {
+        --         typeCheckingMode = 'basic',
+        --         autoImportCompletions = true,
+        --         diagnosticSeverityOverrides = {
+        --           reportMissingTypeStubs = 'none',
+        --           reportUnknownMemberType = 'none',
+        --           reportUnknownArgumentType = 'none',
+        --           reportMissingImports = 'warning',
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
         texlab = {},
       }
       -- NOTE: setup servers
@@ -747,7 +748,7 @@ require('lazy').setup({
           return nil
         else
           return {
-            timeout_ms = 2000,
+            timeout_ms = 1000,
             lsp_format = 'fallback',
           }
         end
@@ -757,7 +758,7 @@ require('lazy').setup({
         bash = { 'shfmt' },
         nix = { 'alejandra' },
         rust = { 'rustfmt' },
-        python = { 'black' },
+        python = { 'ruff' },
         markdown = { 'markdownlint' },
         tex = { 'latexindent' },
         json = { 'jq' },

@@ -13,10 +13,13 @@
         "cpu",
         "memory",
         "temperature",
-        "power-profiles-daemon",
+        "custom/seperator",
+        "custom/hyprsunset",
         "custom/hypridle",
+        "power-profiles-daemon",
+        "custom/seperator",
         "bluetooth",
-        "network",
+        "tray",
         "battery",
     ],
     "hyprland/workspaces": {
@@ -27,7 +30,7 @@
             "empty": ""
         },
     },
-    "custom/endpoint": {
+    "custom/seperator": {
         "format": "|",
         "tooltip": false
     },
@@ -44,14 +47,12 @@
             "mode": "year",
             "mode-mon-col": 3,
             "format": {
-                "months": "<span color='#c6c2c2'><b>{}</b></span>",
-                "days": "<span color='#a0a0a0'><b>{}</b></span>",
-                "weeks": "<span color='#787878'><b>W{}</b></span>",
-                "weekdays": "<span color='#909090'><b>{}</b></span>",
-                "today": "<span color='#4fa87a'><b>{}</b></span>"
+                "months": "<span color='#909090'><b>{}</b></span>",
+                "weekdays": "<span color='#71717a'><b>{}</b></span>",
+                "days": "<span color='#d4d4d8'><b>{}</b></span>",
+                "today": "<span color='#22c55e'><b>{}</b></span>"
             }
         },
-        "on-click": "gnome-calendar"
     },
     "network": {
         "format-wifi": "",
@@ -60,9 +61,9 @@
         "on-click": "XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi"
     },
     "bluetooth": {
-        "format": "<span>󰂯</span>",
-        "format-connected": "<span>󰂱</span>",
-        "on-click": "blueberry",
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "on-click": "kitty -e bluetuith",
         "tooltip": true,
         "tooltip-format-connected": "{device_alias}",
         "tooltip-format-connected-battery": "{device_alias} - {device_battery_percentage}%",
@@ -107,7 +108,7 @@
     },
     "power-profiles-daemon": {
         "format": "{icon}",
-        "tooltip": false,
+        "tooltip-format": "{profile}",
         "format-icons": {
             "default": "",
             "performance": "",
@@ -118,14 +119,25 @@
     "custom/hypridle": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "",
+            "deactivated": ""
         },
         "return-type": "json",
         "exec": "~/.config/hypr/scripts/toggle-hypridle.sh status",
         "on-click": "~/.config/hypr/scripts/toggle-hypridle.sh",
         "interval": "once",
         "signal": 8,
-        "tooltip": false
+    },
+    "custom/hyprsunset": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "󰖨"
+        },
+        "return-type": "json",
+        "exec": "~/.config/hypr/scripts/toggle-hyprsunset.sh status",
+        "on-click": "~/.config/hypr/scripts/toggle-hyprsunset.sh",
+        "interval": "once",
+        "signal": 8,
     }
 }

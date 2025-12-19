@@ -2,44 +2,28 @@
 
 get_status() {
     if pgrep -x "hypridle" >/dev/null; then
-        # hypridle is running - idle inhibition deactivated
-        echo '{"alt": "deactivated"}'
+        echo '{"alt": "activated", "tooltip": "Hypridle is active"}'
     else
-        # hypridle is not running - idle inhibition activated
-        echo '{"alt": "activated"}'
+        echo '{"alt": "deactivated", "tooltip": "Hypridle is not active"}'
     fi
 }
 
 toggle_hypridle() {
     if pgrep -x "hypridle" >/dev/null; then
-        # If running, kill it
         pkill -x "hypridle"
-        echo "hypridle stopped" >&2
-        # Send notification if notify-send is available
-        if command -v notify-send >/dev/null; then
-            notify-send "Hypridle" "Idle inhibitor enabled" -i caffeine-cup-full-symbolic
-        fi
+        notify-send "Hypridle" "Idle inhibitor enabled" -i weather-clear-symbolic
     else
-        # If not running, start it
         hypridle &
-        echo "hypridle started" >&2
-        # Send notification if notify-send is available
-        if command -v notify-send >/dev/null; then
-            notify-send "Hypridle" "Idle inhibitor disabled" -i caffeine-cup-empty-symbolic
-        fi
+        notify-send "Hypridle" "Idle inhibitor disabled" -i weather-clear-night-symbolic
     fi
-
-    # Signal waybar to refresh
-    pkill -SIGRTMIN+8 waybar 2>/dev/null || true
+    pkill -SIGRTMIN+8 waybar
 }
 
-# Handle command line arguments
 case "$1" in
 "status")
     get_status
     ;;
 *)
     toggle_hypridle
-    get_status
     ;;
 esac

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-if pgrep -f "^waybar" >/dev/null; then
-    pkill -f "waybar"
+if systemctl --user is-active --quiet waybar; then
+    systemctl --user stop waybar
 else
-    waybar &
+    systemctl --user start waybar
 fi
