@@ -10,6 +10,7 @@
         "clock",
     ],
     "modules-right": [
+        "group/tray-drawer",
         "cpu",
         "memory",
         "temperature",
@@ -19,7 +20,7 @@
         "power-profiles-daemon",
         "custom/seperator",
         "bluetooth",
-        "tray",
+        "network",
         "battery",
     ],
     "hyprland/workspaces": {
@@ -139,5 +140,21 @@
         "on-click": "~/.config/hypr/scripts/toggle-hyprsunset.sh",
         "interval": "once",
         "signal": 8,
-    }
+    },
+    "group/tray-drawer": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "click-to-reveal": false,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/tray-button",
+      "tray",
+      "custom/seperator"
+    ]
+  },
+  "custom/tray-button": {
+    "format": "",
+  },
 }
