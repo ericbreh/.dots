@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+TMP_FILE="/tmp/hyprsunset_on"
+
 get_status() {
-    if pgrep -x "hyprsunset" >/dev/null; then
+    if [ -f "$TMP_FILE" ]; then
         echo '{"alt": "activated", "tooltip": "Hyprsunset is active"}'
     else
         echo '{"alt": "deactivated", "tooltip": "Hyprsunset is not active"}'
@@ -9,13 +11,17 @@ get_status() {
 }
 
 toggle_hyprsunset() {
-    if pgrep -x "hyprsunset" >/dev/null; then
-        pkill hyprsunset
-        notify-send "Hyprsunset" "Blue light filter disabled" -i weather-clear-symbolic
+    pkill hyprsunset
+    if [ -f "$TMP_FILE" ]; then
+        hyprsunset -t 6500 >/dev/null 2>&1 &
+        rm "$TMP_FILE"
+        notify-send "Hyprsunset" "Blue light filter disabled"
     else
-        hyprsunset -t 4000 &
-        notify-send "Hyprsunset" "Blue light filter enabled" -i weather-clear-night-symbolic
+        hyprsunset -t 4000 >/dev/null 2>&1 &
+        touch "$TMP_FILE"
+        notify-send "Hyprsunset" "Blue light filter enabled"
     fi
+    disown
     pkill -SIGRTMIN+8 waybar
 }
 

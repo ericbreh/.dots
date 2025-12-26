@@ -1,0 +1,14 @@
+font=MesloLGS Nerd Font Propo 10
+default-timeout=5000
+anchor=top-right
+border-size=2
+border-radius=10
+padding=5
+
+background-color=#18181b
+text-color=#fafafa
+border-color=#52525b
+
+[urgency=high]
+border-color=#ef4444
+default-timeout=0

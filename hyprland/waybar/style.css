@@ -70,7 +70,6 @@ tooltip {
 
 /* Main module style group */
 #clock,
-#custom-notification,
 #bluetooth,
 #network,
 #battery,
@@ -88,7 +87,6 @@ tooltip {
 
 /* Hover group */
 #clock:hover,
-#custom-notification:hover,
 #bluetooth:hover,
 #network:hover,
 #battery:hover,

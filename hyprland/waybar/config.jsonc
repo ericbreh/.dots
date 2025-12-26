@@ -16,8 +16,8 @@
         "temperature",
         "custom/seperator",
         "custom/hyprsunset",
-        "custom/hypridle",
         "power-profiles-daemon",
+        "custom/hypridle",
         "custom/seperator",
         "bluetooth",
         "network",
@@ -30,16 +30,6 @@
             "default": "",
             "empty": ""
         },
-    },
-    "custom/seperator": {
-        "format": "|",
-        "tooltip": false
-    },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "󰣇",
-        "on-click": "swaync-client -t -sw",
-        "escape": true
     },
     "clock": {
         "format": "{:%a %b %d %I:%M %p}",
@@ -141,20 +131,24 @@
         "interval": "once",
         "signal": 8,
     },
-    "group/tray-drawer": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "click-to-reveal": false,
-      "transition-left-to-right": true
+    "custom/seperator": {
+        "format": "|",
+        "tooltip": false
     },
-    "modules": [
-      "custom/tray-button",
-      "tray",
-      "custom/seperator"
-    ]
-  },
-  "custom/tray-button": {
-    "format": "",
-  },
+    "group/tray-drawer": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "click-to-reveal": false,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/tray-button",
+            "tray",
+            "custom/seperator"
+        ]
+    },
+    "custom/tray-button": {
+        "format": "",
+    },
 }
