@@ -78,7 +78,6 @@ tooltip {
 #temperature,
 #power-profiles-daemon,
 #custom-hypridle,
-#custom-hyprsunset,
 #custom-seperator {
     padding: 0px 5px;
     color: @color-50;
@@ -95,7 +94,6 @@ tooltip {
 #temperature:hover,
 #power-profiles-daemon:hover,
 #custom-hypridle:hover,
-#custom-hyprsunset:hover,
 #custom-seperator:hover {
     transition: all .3s ease;
     color: @color-500;
