@@ -679,6 +679,7 @@ require('lazy').setup({
         nixd = {},
         rust_analyzer = {},
         ty = {},
+        gopls = {},
         -- basedpyright = {
         --   settings = {
         --     basedpyright = {
@@ -762,6 +763,7 @@ require('lazy').setup({
         markdown = { 'markdownlint' },
         tex = { 'latexindent' },
         json = { 'jq' },
+        go = { 'gofumpt' },
       },
     },
   },
