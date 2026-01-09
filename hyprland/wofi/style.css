@@ -1,15 +1,7 @@
 @import url("/home/ericbreh/.config/hypr/colors.css");
 
-@define-color bg rgba(30, 30, 30, 0.95);
-@define-color bg-hover rgba(45, 45, 45, 0.98);
-@define-color text rgba(230, 230, 230, 1.0);
-@define-color accent-primary rgba(160, 160, 160, 1.0);
-@define-color accent-secondary rgba(120, 120, 120, 1.0);
-@define-color accent-highlight rgba(200, 200, 200, 1.0);
-
 @keyframes fadeIn {
     0% {}
-
     100% {}
 }
 
