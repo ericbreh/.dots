@@ -176,6 +176,7 @@ vim.o.expandtab = true
 --  See `:help vim.keymap.set()`
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = '[W]rite the current buffer' })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = '[Q]uit the current window' })
+vim.keymap.set('n', '<C-w>n', ':vnew<CR>', { noremap = true, silent = true })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
