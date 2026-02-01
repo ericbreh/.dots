@@ -17,8 +17,10 @@ binds {
     XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
     XF86AudioMute allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
     XF86AudioPlay allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
-
+    XF86AudioPrev allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
+    XF86AudioNext allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
 
     // Brightness controls
     XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
@@ -27,4 +29,6 @@ binds {
     // Utility shortcuts
     Mod+V { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Alt+L { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+M { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
+    Mod+B { spawn "noctalia-shell" "ipc" "call" "bluetooth" "togglePanel"; }
 }
