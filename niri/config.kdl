@@ -61,6 +61,7 @@ layout {
     }
     default-column-width { proportion 1.0; }
 
+    background-color "transparent"
     focus-ring {
         off
         width 1

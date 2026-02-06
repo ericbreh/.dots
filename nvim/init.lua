@@ -689,7 +689,7 @@ require('lazy').setup({
           settings = {
             ['rust-analyzer'] = {
               cargo = {
-                allFeatures = true,
+                -- allFeatures = true,
               },
             },
           },

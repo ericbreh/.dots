@@ -2,11 +2,14 @@
     "sources": [
         {
             "enabled": true,
-            "name": "Official Noctalia Plugins",
+            "name": "Noctalia Plugins",
             "url": "https://github.com/noctalia-dev/noctalia-plugins"
         }
     ],
     "states": {
+        "niri-overview-launcher": {
+            "enabled": true
+        },
         "screen-recorder": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
