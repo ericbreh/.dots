@@ -145,6 +145,7 @@ return {
         },
       },
       scratch = { enabled = true, ft = 'markdown' },
+      image = { enabled = true },
     }
   end,
 }

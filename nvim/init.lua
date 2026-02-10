@@ -713,6 +713,7 @@ require('lazy').setup({
         --   },
         -- },
         texlab = {},
+        ltex_plus = {},
       }
       -- NOTE: setup servers
       for server_name, server_config in pairs(servers) do
@@ -780,6 +781,7 @@ require('lazy').setup({
         tex = { 'latexindent' },
         json = { 'jq' },
         go = { 'gofumpt' },
+        sql = { 'sql_formatter' },
       },
     },
   },
