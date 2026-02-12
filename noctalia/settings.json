@@ -532,10 +532,6 @@
             {
                 "enabled": true,
                 "id": "niri"
-            },
-            {
-                "enabled": true,
-                "id": "btop"
             }
         ],
         "enableUserTheming": false
