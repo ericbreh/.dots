@@ -8,7 +8,6 @@ layer-rule {
 }
 overview {
     workspace-shadow {
-        off
     }
 }
 
