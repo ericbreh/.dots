@@ -280,18 +280,6 @@ require('lazy').setup({
   -- options to `gitsigns.nvim`.
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -944,8 +932,9 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      local minidiff = require 'mini.diff'
+      minidiff.setup()
+      vim.keymap.set('n', '<leader>kd', minidiff.toggle_overlay, { desc = 'Toggle[k] [D]iff overlay' })
     end,
   },
   { -- Highlight, edit, and navigate code
@@ -980,7 +969,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns',
+  -- require 'kickstart.plugins.gitsigns',
 
   { import = 'custom.plugins' },
 }, {
