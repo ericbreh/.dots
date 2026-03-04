@@ -2,7 +2,7 @@ return {
   'shortcuts/no-neck-pain.nvim',
   lazy = false,
   keys = {
-    { '<leader>kn', '<cmd>NoNeckPain<cr>', desc = 'Toggle[K] [N]oNeckPain' },
+    { '<leader>kn', '<cmd>NoNeckPain<cr>', desc = 'Toggle NoNeckPain' },
   },
   opts = {
     width = 130,

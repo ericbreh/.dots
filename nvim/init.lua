@@ -169,7 +169,6 @@ require('lazy').setup({
       -- Document existing key chains
       spec = {
         { '<leader>s', group = '[S]earch' },
-        { '<leader>k', group = 'Toggle[K]' },
       },
     },
   },
@@ -351,12 +350,10 @@ require('lazy').setup({
             })
           end
 
-          -- The following code creates a keymap to toggle inlay hints in your
-          -- code, if the language server you are using supports them
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>kh', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-            end, 'Toggle[k] Inlay [H]ints')
+            end, 'Toggle Inlay Hints')
           end
         end,
       })
@@ -403,7 +400,7 @@ require('lazy').setup({
             signs = diagnostics_signs_on,
           }
         end
-      end, { desc = 'Toggle[k] [E]rrors' })
+      end, { desc = 'Toggle Errors' })
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -481,7 +478,7 @@ require('lazy').setup({
             vim.notify 'Disabled autoformat for current buffer'
           end
         end,
-        desc = 'Toggle[k] auto [F]ormat on save',
+        desc = 'Toggle auto Format on save',
       },
     },
     opts = {
@@ -624,7 +621,7 @@ require('lazy').setup({
 
       local minidiff = require 'mini.diff'
       minidiff.setup()
-      vim.keymap.set('n', '<leader>kd', minidiff.toggle_overlay, { desc = 'Toggle[k] [D]iff overlay' })
+      vim.keymap.set('n', '<leader>kd', minidiff.toggle_overlay, { desc = 'Toggle diff overlay' })
     end,
   },
 
