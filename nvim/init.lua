@@ -632,16 +632,33 @@ require('lazy').setup({
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
-    main = 'nvim-treesitter.config', -- Sets main module to use for opts
+    branch = 'main',
+    config = function()
+      local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dart', 'rust', 'python' }
+      require('nvim-treesitter').install(parsers)
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local buf, filetype = args.buf, args.match
 
-    opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dart' },
-      ignore_install = { 'latex' },
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-    },
+          local language = vim.treesitter.language.get_lang(filetype)
+          if not language then
+            return
+          end
+
+          -- check if parser exists and load it
+          if not vim.treesitter.language.add(language) then
+            return
+          end
+          -- enables syntax highlighting and other treesitter features
+          vim.treesitter.start(buf, language)
+
+          -- enables treesitter based indentation
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+    end,
   },
 
   -- require 'kickstart.plugins.debug',
