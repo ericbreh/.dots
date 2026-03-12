@@ -24,6 +24,13 @@ return {
       end,
       desc = 'Lazygit',
     },
+    {
+      '<leader>gb',
+      function()
+        Snacks.git.blame_line()
+      end,
+      desc = 'Git Blame',
+    },
   },
   config = function()
     local ok, snacks = pcall(require, 'snacks')
@@ -146,6 +153,7 @@ return {
       },
       scratch = { enabled = true, ft = 'markdown' },
       image = { enabled = true },
+      git = { enabled = true },
     }
   end,
 }

@@ -563,11 +563,6 @@ require('lazy').setup({
       local minidiff = require 'mini.diff'
       minidiff.setup()
       vim.keymap.set('n', '<leader>gd', minidiff.toggle_overlay, { desc = 'Toggle Git Diff Overlay' })
-
-      local minigit = require 'mini.git'
-      minigit.setup()
-      vim.keymap.set('n', '<leader>gb', '<cmd>Git blame -- %:p<CR>', { desc = 'Git Blame' })
-      vim.keymap.set('n', '<leader>gs', '<cmd>!git add %<CR>', { desc = 'Git Stage Buffer' })
     end,
   },
 
@@ -577,7 +572,8 @@ require('lazy').setup({
     build = ':TSUpdate',
     branch = 'main',
     config = function()
-      local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dart', 'rust', 'python' }
+      local parsers =
+        { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dart', 'rust', 'python', 'latex' }
       require('nvim-treesitter').install(parsers)
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
