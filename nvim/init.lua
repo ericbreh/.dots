@@ -374,6 +374,12 @@ require('lazy').setup({
           },
         },
         bashls = {},
+        clangd = {
+          cmd = {
+            'clangd',
+            '--query-driver=/nix/store/*-xtensa-esp-elf-esp-idf-*/bin/xtensa-esp32-elf-gcc',
+          },
+        },
         nixd = {},
         rust_analyzer = {
           settings = {
@@ -432,10 +438,7 @@ require('lazy').setup({
         if vim.b[bufnr].disable_autoformat then
           return
         end
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = {}
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
@@ -448,6 +451,8 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         bash = { 'shfmt' },
+        c = { 'clang_format' },
+        cpp = { 'clang_format' },
         nix = { 'alejandra' },
         rust = { 'rustfmt' },
         python = { 'ruff' },
@@ -573,7 +578,7 @@ require('lazy').setup({
     branch = 'main',
     config = function()
       local parsers =
-        { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dart', 'rust', 'python', 'latex' }
+        { 'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dart', 'rust', 'python', 'latex' }
       require('nvim-treesitter').install(parsers)
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(args)
