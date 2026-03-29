@@ -37,3 +37,7 @@ binds {
     Mod+B { spawn "noctalia-shell" "ipc" "call" "bluetooth" "togglePanel"; }
     Mod+G { spawn "noctalia-shell" "ipc" "call" "plugin:file-search" "toggle"; }
 }
+
+switch-events {
+    lid-close { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+}
