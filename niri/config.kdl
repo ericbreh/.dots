@@ -76,7 +76,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "kitty"; }
-    Mod+W hotkey-overlay-title="Open a Browser" { spawn "firefox"; }
+    Mod+W hotkey-overlay-title="Open a Browser" { spawn "zen-beta"; }
     Mod+D hotkey-overlay-title="Open File Explorer" { spawn "nautilus"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }

@@ -390,7 +390,9 @@ require('lazy').setup({
             },
           },
         },
-        ty = {},
+        ty = {
+          root_markers = { '.git' },
+        },
         gopls = {},
         texlab = {},
         ltex_plus = {},
