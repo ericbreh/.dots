@@ -38,6 +38,6 @@ binds {
     Mod+G { spawn "noctalia-shell" "ipc" "call" "plugin:file-search" "toggle"; }
 }
 
-switch-events {
-    lid-close { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-}
+// switch-events {
+//     lid-close { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+// }
