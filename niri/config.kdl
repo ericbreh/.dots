@@ -53,6 +53,13 @@ window-rule {
     draw-border-with-background false
 }
 
+blur {
+    passes 1
+    offset 2
+    noise 0.02
+    saturation 1.5
+}
+
 layout {
     gaps 4
 
